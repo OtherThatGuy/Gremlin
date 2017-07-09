@@ -67,16 +67,48 @@ if held{
     image_angle-=xvel
 }
 else{
+    image_angle-=angle_difference(image_angle,0)/max(abs(angleDiff),1)
     image_angle+=angleDiff
-    angleDiff/=1.1
-    x+=xvel
-    y+=yvel
+    angleDiff/=1.03
+    yvel+=1.5
+    scr_collision()
     xvel/=1.1
     yvel/=1.1
 }
 
 lastx=x
 lasty=y
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if place_meeting(x,y,obj_wall){
+    if !place_meeting(x,y-sprite_height/2,obj_wall) y--
+    else if !place_meeting(x,y+sprite_height/2,obj_wall) y++
+    else if !place_meeting(x-sprite_width/2,y,obj_wall) x--
+    else if !place_meeting(x+sprite_width/2,y,obj_wall) x++
+    else{
+        x+=sign(x-(room_width/2))
+        y+=sign(y-(room_height/2))
+    }
+
+}
 </string>
           </argument>
         </arguments>

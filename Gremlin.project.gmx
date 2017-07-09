@@ -8,15 +8,20 @@
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>
     <sprite>sprites\spr_mouse</sprite>
+    <sprite>sprites\spr_wall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_collision.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_mouse</object>
     <object>objects\obj_bottle</object>
+    <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>
