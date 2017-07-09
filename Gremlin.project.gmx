@@ -5,14 +5,21 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_BottlePlaceHolder</sprite>
+    <sprite>sprites\spr_mouse</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
   </fonts>
-  <objects name="objects"/>
+  <objects name="objects">
+    <object>objects\obj_mouse</object>
+    <object>objects\obj_bottle</object>
+  </objects>
   <rooms name="rooms">
+    <room>rooms\room_Test</room>
     <room>rooms\room_Template</room>
   </rooms>
   <help>
