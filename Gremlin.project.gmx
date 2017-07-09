@@ -22,6 +22,7 @@
     <object>objects\obj_mouse</object>
     <object>objects\obj_bottle</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_liquid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>
