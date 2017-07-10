@@ -28,7 +28,7 @@
             <string>full=100
 held=false
 pour=false
-nextdrop=6
+nextdrop=2
 lastx=x
 lasty=y
 xvel=0
@@ -63,7 +63,6 @@ last=-1
             <string>///Controls swaying physics
 //if abs(image_angle)&gt;360 image_angle=(abs(image_angle) mod 360)
 
-image_angle=clamp(image_angle,-160,160)
 if held{
     angleDiff=mean(angle_difference(image_angle,lastAngle),angleDiff)
     lastAngle=image_angle
@@ -86,6 +85,9 @@ else{
 
 lastx=x
 lasty=y
+
+if pour image_angle=clamp(image_angle,-180,180)
+else if image_angle!=0 image_angle= image_angle mod (sign(image_angle)*360)
 </string>
           </argument>
         </arguments>
@@ -140,16 +142,16 @@ if place_meeting(x,y,obj_wall){
             <kind>1</kind>
             <string>///Pouring
 
-if abs(image_angle)&gt;95 nextdrop--
+if abs(image_angle)&gt;=95 nextdrop-=1//+abs(xvel)+abs(yvel)
 else last=-1
 
-if nextdrop==0{
-    nextdrop=6
+if nextdrop&lt;=0{
+    nextdrop=2
     with instance_create(x+lengthdir_x(sprite_yoffset*0.75,image_angle+90),y+lengthdir_y(sprite_yoffset*0.75,image_angle+90),obj_liquid){
         color=other.color
         size=clamp(sqr(abs(angle_difference(other.image_angle,0))/36),4,25)
-        xvel=other.xvel/8+lengthdir_x(8,other.image_angle+90)
-        yvel=other.yvel/8+lengthdir_y(8,other.image_angle+90)
+        xvel=other.xvel/8+lengthdir_x(8,other.image_angle+90)+random_range(-1,1)
+        yvel=other.yvel/8+lengthdir_y(8,other.image_angle+90)+random_range(-1,1)
         if instance_exists(other.last)other.last.next=id
         other.last=id
     }
@@ -173,6 +175,29 @@ if nextdrop==0{
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

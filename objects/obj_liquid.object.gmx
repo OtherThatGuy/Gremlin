@@ -30,6 +30,7 @@ yvel=0
 color=c_white
 size=16
 next=-1
+destroy=false
 </string>
           </argument>
         </arguments>
@@ -52,12 +53,21 @@ next=-1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>yvel+=1.5
+            <string>if destroy{
+    size/=1.1
+    if irandom(60)=59 instance_destroy()
+}
+
+if place_meeting(x,y,obj_wall)||y&gt;room_height{
+    destroy=true
+    yvel*=-0.3
+    xvel*=random_range(-1,1)
+}
+
+yvel+=1.5
 
 x+=xvel
 y+=yvel
-
-if place_meeting(x,y,obj_wall)||y&gt;room_height instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -100,8 +110,9 @@ if place_meeting(x,y,obj_wall)||y&gt;room_height instance_destroy()
 draw_circle(x,y,size,false)
 if instance_exists(next) draw_line_width(x,y,next.x,next.y,size*2)
 else{
-    draw_line_width(x-xvel*2,y-yvel*2,x,y,size*2)
+    draw_line_width(x-xvel*2,y-yvel*2,x+xvel,y+yvel,size*2)
     draw_circle(x-xvel*2,y-yvel*2,size,false)
+    draw_circle(x+xvel,y+yvel,size,false)
 }
 
 
