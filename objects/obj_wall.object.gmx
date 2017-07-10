@@ -31,6 +31,7 @@ hasVerPuddle = false;
 Hor = 0;
 Ver = 0;
 SpillAmount = 0.2;
+SpillColor=c_gray
 curSpillAmount = 0;
 curPuddleHeight = 0;
 multiplied = false;
@@ -75,7 +76,7 @@ verX = 0;
  }
  
  if (currenthorsprite = spr_horpuddle2) {
-  horY = y + spr_horpuddle2.sprite_height;
+  horY = y + sprite_get_height(spr_horpuddle2);
  } else {
   horY = y;
  }
@@ -86,6 +87,7 @@ if (multiplied = false) {
   leftwall.hasHorPuddle = true;
   leftwall.multiplied = true;
   leftwall.Hor = self.Hor;
+  
  }
  
  if (rightwall != noone) {
@@ -99,12 +101,16 @@ if (multiplied = false) {
 if (leftwall != noone) {
   if (leftwall.SpillAmount &lt;= self.SpillAmount / 2) {
    leftwall.SpillAmount += 0.2;
+   leftwall.SpillColor=merge_colour(leftwall.SpillColor,SpillColor,0.5)
+   hasVerPuddle=false
   }
 }
 
 if (rightwall != noone) {
   if (rightwall.SpillAmount &lt;= self.SpillAmount / 2) {
    rightwall.SpillAmount += 0.2;
+   rightwall.SpillColor=merge_colour(rightwall.SpillColor,SpillColor,0.5)
+   hasVerPuddle=false
   }
 }
 
@@ -149,12 +155,15 @@ if (multiplied = false) {
 if (upwall != noone) {
   if (upwall.SpillAmount &lt;= self.SpillAmount / 2) {
    upwall.SpillAmount += 0.2;
+   upwall.SpillColor=merge_colour(upwall.SpillColor,SpillColor,0.5)
+   hasHorPuddle=false
   }
 }
 
 if (downwall != noone) {
   if (downwall.SpillAmount &lt;= self.SpillAmount / 2) {
    downwall.SpillAmount += 0.2;
+   downwall.SpillColor=merge_colour(downwall.SpillColor,SpillColor,0.5)
   }
 }
 
@@ -199,11 +208,11 @@ if (downwall != noone) {
             <kind>1</kind>
             <string>draw_self();
 if (hasHorPuddle = true) {
-   var Horpuddle = draw_sprite_ext(currenthorsprite, 0, x, horY, 1, curPuddleHeight, 0, c_white, curSpillAmount);
+   draw_sprite_ext(currenthorsprite, 0, x, horY, 1, curPuddleHeight, 0, SpillColor, curSpillAmount);
 }
 
 if (hasVerPuddle = true) {
-   var Verpuddle = draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, c_white, curSpillAmount);
+   draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, SpillColor, curSpillAmount);
 }
 </string>
           </argument>

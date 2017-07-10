@@ -55,13 +55,28 @@ destroy=false
             <kind>1</kind>
             <string>if destroy{
     size/=1.1
-    if irandom(60)=59 instance_destroy()
+    if irandom(60)=59||size&lt;1 instance_destroy()
 }
+if y&gt;room_height instance_destroy()
 
-if place_meeting(x,y,obj_wall)||y&gt;room_height{
+if place_meeting(x,y,obj_wall){
+    var wall = instance_place(x, y, obj_wall);
+    wall.SpillAmount += 0.0002*size;
+    wall.SpillColor=merge_colour(wall.SpillColor,color,0.9998)
+    if !destroy{
+        if !place_meeting(x,y-yvel,obj_wall){
+            wall.Hor = sign(yvel);
+            wall.hasHorPuddle = true;
+        }
+        else{
+            wall.Ver = sign(xvel)
+            wall.hasVerPuddle=true
+        }
+    }
     destroy=true
     yvel*=-0.3
     xvel*=random_range(-1,1)
+    
 }
 
 yvel+=1.5
