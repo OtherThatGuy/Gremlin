@@ -62,7 +62,7 @@ if y&gt;room_height instance_destroy()
 if place_meeting(x,y,obj_wall){
     var wall = instance_place(x, y, obj_wall);
     wall.SpillAmount += 0.0002*size;
-    wall.SpillColor=merge_colour(wall.SpillColor,color,0.9998)
+    wall.SpillColor=merge_colour(wall.SpillColor,color,0.02)
     if !destroy{
         if !place_meeting(x,y-yvel,obj_wall){
             wall.Hor = sign(yvel);
@@ -123,13 +123,14 @@ y+=yvel
             <kind>1</kind>
             <string>draw_set_color(color)
 draw_circle(x,y,size,false)
-if instance_exists(next) draw_line_width(x,y,next.x,next.y,size*2)
-else{
-    draw_line_width(x-xvel*2,y-yvel*2,x+xvel,y+yvel,size*2)
-    draw_circle(x-xvel*2,y-yvel*2,size,false)
-    draw_circle(x+xvel,y+yvel,size,false)
-}
-
+if !destroy{
+    if instance_exists(next) draw_line_width(x,y,next.x,next.y,size*2)
+    else{
+        draw_line_width(x-xvel*2,y-yvel*2,x+xvel,y+yvel,size*2)
+        draw_circle(x-xvel*2,y-yvel*2,size,false)
+        draw_circle(x+xvel,y+yvel,size,false)
+    }
+} else draw_circle(x,y,size,false)
 
 draw_set_color(c_white)
 </string>

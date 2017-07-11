@@ -14,6 +14,8 @@
     <sprite>sprites\spr_horPuddle</sprite>
     <sprite>sprites\spr_horpuddle2</sprite>
     <sprite>sprites\spr_SpillPlaceHolder</sprite>
+    <sprite>sprites\spr_radioDial</sprite>
+    <sprite>sprites\spr_button</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,11 +26,13 @@
     <font>fonts\fnt_default</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_newspill_OLD</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_bottle</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_liquid</object>
-    <object>objects\obj_newspill_OLD</object>
+    <object>objects\obj_dial</object>
+    <object>objects\obj_button</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>
