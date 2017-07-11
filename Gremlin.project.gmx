@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>
+    <sprite>sprites\spr_glassPlaceHolder</sprite>
     <sprite>sprites\spr_mouse</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_verPuddle</sprite>
@@ -29,6 +30,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_liquid</object>
     <object>objects\obj_newspill_OLD</object>
+    <object>objects\obj_glass</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>
