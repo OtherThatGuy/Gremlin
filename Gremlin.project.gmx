@@ -17,6 +17,7 @@
     <sprite>sprites\spr_SpillPlaceHolder</sprite>
     <sprite>sprites\spr_radioDial</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_Book</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +26,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
+    <font>fonts\fnt_book</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_newspill_OLD</object>
@@ -35,6 +37,7 @@
     <object>objects\obj_dial</object>
     <object>objects\obj_glass</object>
     <object>objects\obj_button</object>
+    <object>objects\obj_book</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>

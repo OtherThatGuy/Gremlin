@@ -57,7 +57,7 @@ lasty = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>SpillAmount = clamp(SpillAmount, 0, sprite_get_height(spr_glassPlaceHolder));
+            <string>SpillAmount = clamp(SpillAmount, 0, sprite_get_height(sprite_index));
 curSpillAmount = lerp(curSpillAmount, SpillAmount, .05);
 if (held) {
  xvel=mean(x-lastx,xvel)

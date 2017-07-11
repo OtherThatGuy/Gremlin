@@ -72,6 +72,23 @@ if mouse_check_button_pressed(mb_left){
     else if place_meeting(x,y,obj_button){
         with instance_place(x,y,obj_button) on= !on
     }
+    else if place_meeting(x,y,obj_book){
+        with instance_place(x,y,obj_book){
+            if open{
+                if other.x&lt;x page-=2
+                else page+=2
+            }
+            open=true
+        }
+    }
+}
+
+if mouse_check_button_pressed(mb_right)&amp;&amp;tool=-1{
+    if place_meeting(x,y,obj_book){
+        with instance_place(x,y,obj_book){
+            open=false
+        }
+    }
 }
 
 if instance_exists(tool){
