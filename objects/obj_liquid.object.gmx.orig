@@ -62,7 +62,10 @@ if y&gt;room_height instance_destroy()
 if place_meeting(x,y,obj_wall){
     var wall = instance_place(x, y, obj_wall);
     wall.SpillAmount += 0.0002*size;
-    wall.SpillColor=merge_colour(wall.SpillColor,color,0.9998)
+<<<<<<< HEAD
+=======
+    wall.SpillColor=merge_colour(wall.SpillColor,color,0.02)
+>>>>>>> origin/master
     if !destroy{
         wall.SpillColor=merge_colour(wall.SpillColor,color,0.9998);
         if !place_meeting(x,y-yvel,obj_wall){

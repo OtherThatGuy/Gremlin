@@ -25,9 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
+            <string>bottle=0
+glass = 0;
+holding = false;
+=======
             <string>tool=-1
 toolName=""
-holding = false;
+>>>>>>> origin/master
 </string>
           </argument>
         </arguments>
@@ -65,6 +70,20 @@ if mouse_check_button_pressed(mb_left){
         tool.held=true
         toolName="bottle"
     }
+<<<<<<< HEAD
+    else bottle.held=false
+    
+    if bottle.held{
+        bottle.x=x
+        bottle.y=y
+        bottle.pour=mouse_check_button(mb_right)
+        holding = true;
+    }
+    else { 
+    bottle.pour=false
+    holding = false;
+    }
+=======
     else if place_meeting(x,y,obj_dial){
         tool = instance_place(x,y,obj_dial)
         toolName="dial"
@@ -73,6 +92,7 @@ if mouse_check_button_pressed(mb_left){
         with instance_place(x,y,obj_button) on= !on
     }
 }
+>>>>>>> origin/master
 
 if instance_exists(tool){
     if toolName="bottle"{
