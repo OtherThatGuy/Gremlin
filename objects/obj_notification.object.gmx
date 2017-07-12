@@ -26,27 +26,31 @@
           <argument>
             <kind>1</kind>
             <string>//Notifications: object version. it works pretty well but the problem comes when two notifications spawn at the same time. may look into other methods.
-goodComments[0] = "This is really good.";
-goodComments[1] = "Doesn't taste bad.";
-goodComments[2] = "Not bad.";
-goodComments[3] = "I guess you aren't so incompetent.";
-goodComments[4] = "...It's okay, i guess.";
+//good comments
+Comments[0,0] = "This is really good.";
+Comments[0,1] = "Doesn't taste bad.";
+Comments[0,2] = "Not bad.";
+Comments[0,3] = "I guess you aren't so incompetent.";
+Comments[0,4] = "...It's okay, i guess.";
+//mixed comments
+Comments[1,0] = "You could've done better.";
+Comments[1,1] = "Below avarage.";
+Comments[1,2] = "Mixed comment";
+Comments[1,3] = "Not amazing.";
+Comments[1,4] = "Mixed Comment.";
+//bad comments
+Comments[2,0] = "Tastes like puke.";
+Comments[2,1] = "Were you sleeping while mixing this?";
+Comments[2,2] = "Wow, you really are THAT incompetent";
+Comments[2,3] = "You call this a drink?";
+Comments[2,4] = "Bad Comment.";
 
-mixedComments[0] = "You could've done better.";
-mixedComments[1] = "Below avarage.";
-mixedComments[2] = "Mixed comment";
-mixedComments[3] = "Not amazing.";
-mixedComments[4] = "Mixed Comment.";
-
-badComments[0] = "Tastes like puke.";
-badComments[1] = "Were you sleeping while mixing this?";
-badComments[2] = "Wow, you really are THAT incompetent";
-badComments[3] = "You call this a drink?";
-badComments[4] = "Bad Comment.";
+Comments[3,0] = "This is a tip"
 
 //these arrays need to all have the same number of entries
-commentID = random(array_length_1d(goodComments));
+typeAmount = array_height_2d(Comments) - 1;
 commentType = 0;
+commentID = random(array_length_2d(Comments, commentType) - 1);
 curFace = -1;
 curComment = "";
 timer = 2000 / room_speed;
@@ -83,15 +87,7 @@ y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (commentType = 1) {
- curComment = goodComments[commentID];
-} else if (commentType = 2) {
- curComment = mixedComments[commentID];
-} else if (commentType = 3) {
- curComment = badComments[commentID];
-} else if (commentType = 0) {
- curComment = "This is a tip!";
-}
+            <string>curComment = Comments[commentType,commentID];
 
 
 
@@ -141,6 +137,9 @@ draw_sprite_ext(spr_notFaces,commentType, x, y, 1, 1, 0, c_white, alpha);
 draw_set_font(fnt_comment);
 draw_set_halign(fa_left);
 draw_text_colour(x + sprite_get_width(spr_notFaces), y + sprite_get_height(spr_notComment) / 2 + 2, curComment, c_black, c_black, c_black, c_black, alpha);
+
+draw_set_font(fnt_default);
+draw_set_halign(fa_middle);
 </string>
           </argument>
         </arguments>

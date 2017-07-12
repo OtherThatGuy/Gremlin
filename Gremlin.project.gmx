@@ -18,6 +18,11 @@
     <sprite>sprites\spr_radioDial</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_Book</sprite>
+    <sprite>sprites\spr_notComment</sprite>
+    <sprite>sprites\spr_notFaces</sprite>
+    <sprites name="Masks">
+      <sprite>sprites\spr_commentMask</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,6 +32,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
     <font>fonts\fnt_book</font>
+    <font>fonts\fnt_comment</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_newspill_OLD</object>
@@ -38,6 +44,7 @@
     <object>objects\obj_glass</object>
     <object>objects\obj_button</object>
     <object>objects\obj_book</object>
+    <object>objects\obj_notification</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>

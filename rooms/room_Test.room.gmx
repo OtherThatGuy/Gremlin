@@ -82,7 +82,7 @@ draw_set_valign(fa_middle)</code>
     <instance objName="obj_bottle" x="960" y="512" name="inst_F1E36844" locked="0" code="color=c_blue&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dial" x="128" y="960" name="inst_13945C98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="256" y="960" name="inst_93FF3332" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_glass" x="1216" y="640" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_glass" x="1216" y="384" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_book" x="1728" y="960" name="inst_1CCC1122" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

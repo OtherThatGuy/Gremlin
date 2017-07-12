@@ -72,7 +72,7 @@ if (held) {
   SpillAmount -= 0.5;
  }
 } else {
-   yvel+=1.5;
+  yvel+=1.5;
   scr_collision();
   yvel /= 1.1;
   xvel /= 1.1;
