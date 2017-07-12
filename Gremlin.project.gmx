@@ -32,6 +32,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
     <font>fonts\fnt_book</font>
+    <font>fonts\fnt_comment</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_newspill_OLD</object>
