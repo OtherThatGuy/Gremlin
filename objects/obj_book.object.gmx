@@ -202,8 +202,9 @@ draw_set_alpha(0.05)
 draw_set_color(c_white)
 
 for(var i=1;i&lt;splashes[page];i++){
-    draw_set_color(splashcolor[page,i])
-    draw_circle(x+splashx[page,i],y+splashy[page,i],splashsize[page,i],false)
+    //draw_set_color(splashcolor[page,i])
+    //draw_circle(x+splashx[page,i],y+splashy[page,i],splashsize[page,i],false)
+    draw_circle_colour(x+splashx[page,i],y+splashy[page,i],splashsize[page,i],splashcolor[page,i],c_gray,false)
 }
 
 

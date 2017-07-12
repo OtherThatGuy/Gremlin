@@ -32,6 +32,8 @@ yvel=0
 held=false
 
 color=c_white
+
+name="TEST"
 </string>
           </argument>
         </arguments>
@@ -69,6 +71,34 @@ lastx=x
 lasty=y
 
 scr_moveOutFromWall()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_glass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if (point_in_rectangle(x,y, other.x - other.sprite_width / 2, other.y - other.sprite_height / 1.85, other.x + other.sprite_width / 2, other.y - other.sprite_height / 3)) &amp;&amp;!held &amp;&amp;yvel&gt;0 {
+    other.ingredientCount++
+    other.ingredient[other.ingredientCount]=name
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>

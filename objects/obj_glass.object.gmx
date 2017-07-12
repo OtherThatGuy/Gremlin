@@ -35,6 +35,8 @@ xvel = 0;
 yvel = 0;
 lastx = 0;
 lasty = 0;
+ingredientCount=0
+ingedient[0]=""
 </string>
           </argument>
         </arguments>
@@ -86,6 +88,22 @@ colorcounter = clamp(colorcounter, 0, 0.9998);
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
