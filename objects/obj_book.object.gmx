@@ -3,7 +3,7 @@
   <spriteName>spr_Book</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,13 @@
             <string>open = false
 top=sprite_height/2.4
 page=1
+splashes[0]=0
+splashx[0,0]=x
+splashy[0,0]=y
+splashcolor[0,0]=c_white
+splashsize[0,0]=0
+
+cursplash=0
 
 recipe[0,0]="Title"
 recipe[0,1]="Ingredient 1"
@@ -49,6 +56,27 @@ recipe[3,2]="Spingus"
 recipe[4,0]="---"
 recipe[4,1]="*"
 recipe[4,2]="*"
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for(i=0;i&lt;=array_height_2d(recipe);i++) splashes[i]=0
 </string>
           </argument>
         </arguments>
@@ -76,6 +104,45 @@ if page mod 2 = 0 page--
 
 if open y= mean(y,960)
 else y=mean(y,1152)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_liquid">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !other.destroy&amp;&amp;irandom(10)=1{
+
+    splashes[page]=clamp(splashes[page]+1,0,255)
+    cursplash = (cursplash mod 255) +1
+    
+    splashcolor[page,cursplash]=other.color
+    splashsize[page,cursplash]=other.size*1.3
+    
+    splashx[page,cursplash]=clamp(other.x-x,splashsize[page,cursplash]-sprite_width/2,splashsize[page,cursplash]+sprite_width/2.4)
+    splashy[page,cursplash]=clamp(other.y-y,splashsize[page,cursplash]-sprite_height/2,splashsize[page,cursplash]+sprite_height/2.4)
+    
+    other.destroy=true
+    
+    other.yvel*=-0.5
+    other.xvel*=random_range(-0.8,0.8)
+    
+}
 </string>
           </argument>
         </arguments>
@@ -131,7 +198,17 @@ for(var i=1;i&lt;array_length_2d(recipe,page+1);i++){
     draw_text(x+94,y-top+25+(25*i),recipe[page+1,i])
 }
 
+draw_set_alpha(0.05)
 draw_set_color(c_white)
+
+for(var i=1;i&lt;splashes[page];i++){
+    draw_set_color(splashcolor[page,i])
+    draw_circle(x+splashx[page,i],y+splashy[page,i],splashsize[page,i],false)
+}
+
+
+draw_set_color(c_white)
+draw_set_alpha(1)
 draw_set_font(fnt_default)
 </string>
           </argument>
