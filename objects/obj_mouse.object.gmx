@@ -69,8 +69,11 @@ if mouse_check_button_pressed(mb_left){
         tool = instance_place(x,y,obj_glass)
         tool.held=true
         toolName="glass"
-    }
-    else if place_meeting(x,y,obj_ingredient){
+    } else if place_meeting(x,y,obj_mixer){
+        tool = instance_place(x,y,obj_mixer)
+        tool.held=true
+        toolName="mixer"
+    } else if place_meeting(x,y,obj_ingredient){
         tool = instance_place(x,y,obj_ingredient)
         tool.held=true
         toolName="ingredient"
@@ -125,6 +128,15 @@ if instance_exists(tool){
         
         if mouse_check_button_released(mb_left){
             tool.held=false
+        }
+    } else if toolName="mixer"{
+        tool.x=x
+        tool.y=y
+        tool.pour=mouse_check_button(mb_right)
+    
+        if mouse_check_button_released(mb_left){
+            tool.held=false
+            tool.pour = false
         }
     }
 }

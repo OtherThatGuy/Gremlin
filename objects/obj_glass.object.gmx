@@ -35,8 +35,16 @@ xvel = 0;
 yvel = 0;
 lastx = 0;
 lasty = 0;
+<<<<<<< HEAD
 ingredientCount=0
 ingedient[0]=""
+=======
+
+type[c_red] = 0;
+type[c_blue] = 0;
+
+shaked = false;
+>>>>>>> fd49d4006310585f839aff282e888663a6c8279a
 </string>
           </argument>
         </arguments>
@@ -64,7 +72,6 @@ curSpillAmount = lerp(curSpillAmount, SpillAmount, .05);
 if (held) {
  xvel=mean(x-lastx,xvel)
  yvel=mean(y-lasty,yvel)
- 
  if (yvel &lt;= lengthdir_y(20, 90)  and yvel != 0 and SpillAmount &gt; 0) {
   var spill = instance_create(x+ random_range(-sprite_width/2,sprite_width/2), y-sprite_height / 1.5, obj_liquid);
   spill.color = curColor;
@@ -123,10 +130,31 @@ colorcounter = clamp(colorcounter, 0, 0.9998);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>draw_self();
+draw_text(x+150, y, string(type[c_red]));
+draw_text(x+150, y-50, string(type[c_blue]));
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>draw_sprite_part_ext(spr_glassPlaceHolder, 1, 0, 0, sprite_get_width(spr_glassPlaceHolder), curSpillAmount, x - sprite_get_width(spr_glassPlaceHolder) / 2, y + sprite_get_height(spr_glassPlaceHolder) / 2, 1, -1, curColor, 0.5);
 draw_text(x+20, y, string(yvel));
-
-draw_self();
 </string>
           </argument>
         </arguments>

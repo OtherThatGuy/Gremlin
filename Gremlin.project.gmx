@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>
+    <sprite>sprites\spr_mixerPlaceHolder</sprite>
     <sprite>sprites\spr_glassPlaceHolder</sprite>
     <sprite>sprites\spr_mouse</sprite>
     <sprite>sprites\spr_wall</sprite>
@@ -22,6 +23,7 @@
     <sprite>sprites\spr_commentMask</sprite>
     <sprite>sprites\spr_notComment</sprite>
     <sprite>sprites\spr_notFaces</sprite>
+    <sprite>sprites\spr_bookIcons</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +40,7 @@
     <object>objects\obj_newspill_OLD</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_bottle</object>
+    <object>objects\obj_mixer</object>
     <object>objects\obj_glass</object>
     <object>objects\obj_ingredient</object>
     <object>objects\obj_wall</object>
