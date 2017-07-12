@@ -62,9 +62,9 @@ if y&gt;room_height instance_destroy()
 if place_meeting(x,y,obj_wall){
     var wall = instance_place(x, y, obj_wall);
     wall.SpillAmount += 0.0002*size;
-    wall.SpillColor=merge_colour(wall.SpillColor,color,0.9998)
+    wall.SpillColor=merge_colour(wall.SpillColor,color,0.02)
     if !destroy{
-        wall.SpillColor=merge_colour(wall.SpillColor,color,0.9998);
+        wall.SpillColor=merge_colour(wall.SpillColor,color,0.02);
         if !place_meeting(x,y-yvel,obj_wall){
             wall.Hor = sign(yvel);
             wall.hasHorPuddle = true;
@@ -109,9 +109,9 @@ y+=yvel
             <string>if (!destroy) {
 if (point_in_rectangle(x,y, other.x - other.sprite_width / 2, other.y - other.sprite_height / 1.85, other.x + other.sprite_width / 2, other.y - other.sprite_height / 3)) {
 other.SpillAmount += size/10;
-other.curColor=merge_colour(other.curColor,color,0.05*(1-other.SpillAmount/200));
+other.curColor=merge_colour(other.curColor,color,0.02*(2-other.SpillAmount/100));
 
-instance_destroy();
+//instance_destroy();
  }
 }
 

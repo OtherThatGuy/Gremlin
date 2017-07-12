@@ -102,16 +102,17 @@ if (leftwall != noone) {
   if (leftwall.SpillAmount &lt;= self.SpillAmount / 2) {
    leftwall.SpillAmount += 0.2;
    leftwall.SpillColor=merge_colour(leftwall.SpillColor,SpillColor,0.5)
-   hasVerPuddle=false
   }
+  hasVerPuddle=false
 }
 
 if (rightwall != noone) {
   if (rightwall.SpillAmount &lt;= self.SpillAmount / 2) {
    rightwall.SpillAmount += 0.2;
    rightwall.SpillColor=merge_colour(rightwall.SpillColor,SpillColor,0.5)
-   hasVerPuddle=false
+   
   }
+  hasVerPuddle=false
 }
 
 }

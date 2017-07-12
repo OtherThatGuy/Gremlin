@@ -18,16 +18,16 @@
     <sprite>sprites\spr_radioDial</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_Book</sprite>
+    <sprite>sprites\spr_ingredient</sprite>
+    <sprite>sprites\spr_commentMask</sprite>
     <sprite>sprites\spr_notComment</sprite>
     <sprite>sprites\spr_notFaces</sprite>
-    <sprites name="Masks">
-      <sprite>sprites\spr_commentMask</sprite>
-    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_collision.gml</script>
+    <script>scripts\scr_moveOutFromWall.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
@@ -38,10 +38,11 @@
     <object>objects\obj_newspill_OLD</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_bottle</object>
+    <object>objects\obj_glass</object>
+    <object>objects\obj_ingredient</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_liquid</object>
     <object>objects\obj_dial</object>
-    <object>objects\obj_glass</object>
     <object>objects\obj_button</object>
     <object>objects\obj_book</object>
     <object>objects\obj_notification</object>
