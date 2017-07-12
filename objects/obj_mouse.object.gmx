@@ -65,7 +65,12 @@ if mouse_check_button_pressed(mb_left){
         tool.held=true
         toolName="bottle"
     }
-    if place_meeting(x,y,obj_ingredient){
+    else if place_meeting(x,y,obj_glass){
+        tool = instance_place(x,y,obj_glass)
+        tool.held=true
+        toolName="glass"
+    }
+    else if place_meeting(x,y,obj_ingredient){
         tool = instance_place(x,y,obj_ingredient)
         tool.held=true
         toolName="ingredient"
@@ -85,11 +90,7 @@ if mouse_check_button_pressed(mb_left){
             }
             open=true
         }
-   } else if place_meeting(x,y,obj_glass){
-        tool = instance_place(x,y,obj_glass)
-        tool.held=true
-        toolName="glass"
-    }
+   }
 }
 
 if mouse_check_button_pressed(mb_right)&amp;&amp;tool=-1{
@@ -135,7 +136,7 @@ if mouse_check_button_released(mb_left){
 }
 
 //DEBUG: notifications
-if mouse_check_button_pressed(mb_left) {
+if keyboard_check_pressed(vk_space) {
    var noti = instance_create(0,0, obj_notification);
    
    noti.commentType = random(noti.typeAmount);

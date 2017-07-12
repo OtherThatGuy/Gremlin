@@ -19,6 +19,9 @@
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_Book</sprite>
     <sprite>sprites\spr_ingredient</sprite>
+    <sprite>sprites\spr_commentMask</sprite>
+    <sprite>sprites\spr_notComment</sprite>
+    <sprite>sprites\spr_notFaces</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -41,6 +44,7 @@
     <object>objects\obj_dial</object>
     <object>objects\obj_button</object>
     <object>objects\obj_book</object>
+    <object>objects\obj_notification</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>
