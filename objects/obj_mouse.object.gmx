@@ -85,6 +85,10 @@ if mouse_check_button_pressed(mb_left){
             }
             open=true
         }
+   } else if place_meeting(x,y,obj_glass){
+        tool = instance_place(x,y,obj_glass)
+        tool.held=true
+        toolName="glass"
     }
 }
 
@@ -113,32 +117,30 @@ if instance_exists(tool){
         if mouse_check_button_released(mb_left) tool.held=false
     }
     else if toolName = "dial"{
-        tool.image_angle-= angle_difference(point_direction(tool.x,tool.y,lastx,lasty),point_direction(tool.x,tool.y,x,y))
-    }
-}
-
-if instance_exists(obj_glass){
-    glass=instance_nearest(x,y,obj_glass)
-    if mouse_check_button(mb_left){
-    if (holding = false) {
-        if place_meeting(x,y,glass) glass.held=true;
+        tool.image_angle-= angle_difference(point_direction(tool.x,tool.y,lastx,lasty),point_direction(tool.x,tool.y,x,y));
+    } else if toolName="glass" {
+        tool.x=x
+        tool.y=y
+        
+        if mouse_check_button_released(mb_left){
+            tool.held=false
         }
     }
-    else glass.held=false
-    
-    if glass.held{
-        glass.x=x
-        glass.y=y
-    }
-
 }
-else glass=-1
 
 
 if mouse_check_button_released(mb_left){
     tool=-1
     toolName=""
 }
+
+//DEBUG: notifications
+if mouse_check_button_pressed(mb_left) {
+   var noti = instance_create(0,0, obj_notification);
+   
+   noti.commentType = random(noti.typeAmount);
+}
+
 </string>
           </argument>
         </arguments>
