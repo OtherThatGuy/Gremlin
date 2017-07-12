@@ -35,7 +35,6 @@ xvel = 0;
 yvel = 0;
 lastx = 0;
 lasty = 0;
-<<<<<<< HEAD
 ingredientCount=0
 ingedient[0]=""
 =======
@@ -44,7 +43,6 @@ type[c_red] = 0;
 type[c_blue] = 0;
 
 shaked = false;
->>>>>>> fd49d4006310585f839aff282e888663a6c8279a
 </string>
           </argument>
         </arguments>
