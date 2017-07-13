@@ -24,6 +24,7 @@
     <sprite>sprites\spr_notComment</sprite>
     <sprite>sprites\spr_notFaces</sprite>
     <sprite>sprites\spr_bookIcons</sprite>
+    <sprite>sprites\spr_serve</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -31,6 +32,8 @@
     <script>scripts\scr_collision.gml</script>
     <script>scripts\scr_moveOutFromWall.gml</script>
     <script>scripts\scr_getDrinkName.gml</script>
+    <script>scripts\scr_getOrderName.gml</script>
+    <script>scripts\scr_Serve.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
@@ -50,6 +53,8 @@
     <object>objects\obj_button</object>
     <object>objects\obj_book</object>
     <object>objects\obj_notification</object>
+    <object>objects\obj_game</object>
+    <object>objects\obj_serve</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>

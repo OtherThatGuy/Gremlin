@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Notifications: object version. it works pretty well but the problem comes when two notifications spawn at the same time. may look into other methods.
+drinkname = global.currentorder;
 //good comments
 Comments[0,0] = "This is really good.";
 Comments[0,1] = "Doesn't taste bad.";
@@ -45,12 +46,24 @@ Comments[2,2] = "Wow, you really are THAT incompetent";
 Comments[2,3] = "You call this a drink?";
 Comments[2,4] = "Bad Comment.";
 
-Comments[3,0] = "This is a tip"
+//Tips
+Comments[3,0] = "This is a tip";
+Comments[3,1] = "This is a tip";
+Comments[3,2] = "This is a tip";
+Comments[3,3] = "This is a tip";
+Comments[3,4] = "This is a tip";
+
+//Orders
+Comments[4,0] = "Can i get a " + string(drinkname) + "?";
+Comments[4,1] = "give me a" + string(drinkname) + ",please.";
+Comments[4,2] = "hurry and bring me a " + string(drinkname);
+Comments[4,3] = "Can i get a " + string(drinkname) + "?";
+Comments[4,4] = "Can i get a " + string(drinkname) + "?";
+ 
 
 //these arrays need to all have the same number of entries
-typeAmount = array_height_2d(Comments) - 1;
 commentType = 0;
-commentID = random(array_length_2d(Comments, commentType) - 1);
+typeAmount = array_height_2d(Comments) - 1;
 curFace = -1;
 curComment = "";
 timer = 2000 / room_speed;
@@ -60,6 +73,8 @@ leftlerp = 0;
 newy = 0;
 x -= sprite_get_width(spr_notComment) + sprite_get_width(spr_notFaces);
 y = 0;
+candissapear = true;
+commentID = random(array_length_2d(Comments, commentType));
 
 
 
@@ -89,7 +104,20 @@ y = 0;
             <kind>1</kind>
             <string>curComment = Comments[commentType,commentID];
 
-
+if (commentType == 4) {
+ candissapear = false
+ 
+ if (place_meeting(x - sprite_get_width(spr_commentMask), y, obj_notification)) {
+  var noti = instance_place(x - sprite_get_width(spr_commentMask), y, obj_notification);
+  
+  if noti.commentType = 4 {
+   instance_destroy();
+  }
+ }
+ if (drinkname != global.currentorder) {
+  candissapear = true;
+ }
+}
 
 if (place_meeting(x - sprite_get_width(spr_commentMask), y, obj_notification)) {
   newy += 8;
@@ -99,7 +127,9 @@ if (place_meeting(x - sprite_get_width(spr_commentMask), y, obj_notification)) {
 
 y = lerp(y, newy, 0.2);
 
-timer -= 0.1;
+if (candissapear = true) {
+ timer -= 0.1;
+}
 
 timer = clamp(timer, 0, 5);
 
@@ -110,6 +140,10 @@ if (timer &lt;= 0) {
 if (alpha &lt;= 0) {
  instance_destroy();
 } 
+
+if (candissapear = true and commentType == 4) {
+ instance_destroy();
+}
 </string>
           </argument>
         </arguments>

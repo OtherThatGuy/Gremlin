@@ -50,8 +50,8 @@ recipe[1,4]="Shaked"
 
 recipe[2,0]="Text Title 2"
 recipe[2,1]=2
-recipe[2,2]="Test Ing 3"
-recipe[2,3]="Test Ing 4"
+recipe[2,2]="10-20% blue"
+recipe[2,3]="1-5% red"
 
 recipe[3,0]="Crangus"
 recipe[3,1]=3

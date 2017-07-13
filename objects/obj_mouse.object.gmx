@@ -28,6 +28,7 @@
             <string>tool=-1
 toolName=""
 holding = false;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -106,6 +107,7 @@ if mouse_check_button_pressed(mb_right)&amp;&amp;tool=-1{
 
 if instance_exists(tool){
     if toolName="bottle"{
+        image_index = 1;
         tool.x=x
         tool.y=y
         tool.pour=mouse_check_button(mb_right)
@@ -116,6 +118,7 @@ if instance_exists(tool){
         }
     }
     else if toolName="ingredient"{
+        image_index = 1;
         tool.x=x
         tool.y=y
         if mouse_check_button_released(mb_left) tool.held=false
@@ -123,6 +126,7 @@ if instance_exists(tool){
     else if toolName = "dial"{
         tool.image_angle-= angle_difference(point_direction(tool.x,tool.y,lastx,lasty),point_direction(tool.x,tool.y,x,y));
     } else if toolName="glass" {
+        image_index = 1;
         tool.x=x
         tool.y=y
         
@@ -130,6 +134,11 @@ if instance_exists(tool){
             tool.held=false
         }
     } else if toolName="mixer"{
+       if tool.shaked = true {
+        image_index = 2
+       } else {
+        image_index = 1;
+       }
         tool.x=x
         tool.y=y
         tool.pour=mouse_check_button(mb_right)
@@ -143,8 +152,9 @@ if instance_exists(tool){
 
 
 if mouse_check_button_released(mb_left){
-    tool=-1
-    toolName=""
+    tool=-1;
+    toolName="";
+    image_index = 0;
 }
 
 //DEBUG: notifications

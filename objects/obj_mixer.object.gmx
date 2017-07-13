@@ -43,6 +43,8 @@ last=-1
 //so the porcentage of red liquid on the mixer would be c_red
 type[c_red] = 0;
 type[c_blue] = 0;
+type[c_green] = 0;
+type[c_purple] = 0;
 
 shakeamount = 0;
 
