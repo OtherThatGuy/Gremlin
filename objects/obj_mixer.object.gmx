@@ -44,6 +44,8 @@ last=-1
 type[c_red] = 0;
 type[c_blue] = 0;
 
+shakeamount = 0;
+
 shaked = false;
 </string>
           </argument>
@@ -68,7 +70,8 @@ shaked = false;
           <argument>
             <kind>1</kind>
             <string>//just clamping
-full= clamp(full, 0, 100);
+full= clamp(full, 0, 25);
+shakeamount = clamp(shakeamount, 0, 20);
 type[c_red] = clamp(type[c_red], 0, 100);
 type[c_blue] = clamp(type[c_blue], 0, 100);
 
@@ -212,11 +215,50 @@ if nextdrop&lt;=0 and full &gt; 0{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if held {
- if (keyboard_check_pressed(ord("R"))) {
+            <string>///DEBUG: resetting type porcentages to 0
+
+ if (full = 0) {
   type[c_blue] = 0;
   type[c_red] = 0;
+  shakeamount = 0;
+  shaked = false;
  }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///shaking
+if (held) {
+  if (yvel &lt;= lengthdir_y(20, 90)) {
+   shakeamount += 0.1;
+ }
+ 
+ if (yvel &gt;= lengthdir_y(20, 270)) {
+   shakeamount += 0.1;
+ }
+
+
+}
+
+if shakeamount &gt;= 20 {
+  shaked = true;
 }
 </string>
           </argument>
@@ -257,15 +299,16 @@ if nextdrop&lt;=0 and full &gt; 0{
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(x+150, y, string(full));
+draw_text(x+150, y-100, string(full));
 
 /*
 DEBUG: see the collision rectangle for liquids
 draw_rectangle(other.x - other.sprite_xoffset / 3, other.y - other.sprite_yoffset, other.x + other.sprite_xoffset / 3, other.y, false);
-DEBUG: see the porcentage of the types
+*/
+//DEBUG: see the porcentage of the types
 draw_text(x+150, y, string(type[c_red]));
 draw_text(x+150, y-50, string(type[c_blue]));
-*/
+
 </string>
           </argument>
         </arguments>

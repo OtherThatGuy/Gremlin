@@ -30,6 +30,7 @@
   <scripts name="scripts">
     <script>scripts\scr_collision.gml</script>
     <script>scripts\scr_moveOutFromWall.gml</script>
+    <script>scripts\scr_getDrinkName.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
