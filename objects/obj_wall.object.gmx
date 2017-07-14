@@ -30,7 +30,7 @@ hasHorPuddle = false;
 hasVerPuddle = false;
 Hor = 0;
 Ver = 0;
-SpillAmount = 0.2;
+SpillAmount = 0;
 SpillColor=c_gray
 curSpillAmount = 0;
 curPuddleHeight = 0;
@@ -100,7 +100,7 @@ if (multiplied = false) {
 
 if (leftwall != noone) {
   if (leftwall.SpillAmount &lt;= self.SpillAmount / 2) {
-   leftwall.SpillAmount += 0.2;
+   leftwall.SpillAmount += 0.01;
    leftwall.SpillColor=merge_colour(leftwall.SpillColor,SpillColor,0.5)
   }
   hasVerPuddle=false
@@ -108,7 +108,7 @@ if (leftwall != noone) {
 
 if (rightwall != noone) {
   if (rightwall.SpillAmount &lt;= self.SpillAmount / 2) {
-   rightwall.SpillAmount += 0.2;
+   rightwall.SpillAmount += 0.01;
    rightwall.SpillColor=merge_colour(rightwall.SpillColor,SpillColor,0.5)
    
   }
@@ -155,7 +155,7 @@ if (multiplied = false) {
 
 if (upwall != noone) {
   if (upwall.SpillAmount &lt;= self.SpillAmount / 2) {
-   upwall.SpillAmount += 0.2;
+   upwall.SpillAmount += 0.01;
    upwall.SpillColor=merge_colour(upwall.SpillColor,SpillColor,0.5)
    hasHorPuddle=false
   }
@@ -163,12 +163,14 @@ if (upwall != noone) {
 
 if (downwall != noone) {
   if (downwall.SpillAmount &lt;= self.SpillAmount / 2) {
-   downwall.SpillAmount += 0.2;
+   downwall.SpillAmount += 0.01;
    downwall.SpillColor=merge_colour(downwall.SpillColor,SpillColor,0.5)
   }
 }
 
 }
+
+SpillAmount=clamp(SpillAmount,0,1)
 </string>
           </argument>
         </arguments>
@@ -215,6 +217,8 @@ if (hasHorPuddle = true) {
 if (hasVerPuddle = true) {
    draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, SpillColor, curSpillAmount);
 }
+
+draw_text(x,y,string(SpillAmount))
 </string>
           </argument>
         </arguments>

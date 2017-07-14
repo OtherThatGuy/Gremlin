@@ -25,6 +25,8 @@
     <sprite>sprites\spr_notFaces</sprite>
     <sprite>sprites\spr_bookIcons</sprite>
     <sprite>sprites\spr_serve</sprite>
+    <sprite>sprites\spr_ragUp</sprite>
+    <sprite>sprites\spr_ragDn</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -55,6 +57,7 @@
     <object>objects\obj_notification</object>
     <object>objects\obj_game</object>
     <object>objects\obj_serve</object>
+    <object>objects\obj_rag</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>
