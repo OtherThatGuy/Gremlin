@@ -41,6 +41,8 @@ ingredient[0]=""
 
 type[c_red] = 0;
 type[c_blue] = 0;
+type[c_green] = 0;
+type[c_purple] = 0;
 
 shaked = false;
 drinkname = "";
@@ -92,7 +94,10 @@ lasty = y;
 
 colorcounter = clamp(colorcounter, 0, 0.9998);
 
+//this isn't a very good idea since this script takes ALOT of code and may even use for loops, figure out a way so that it only gets executed when it changes
 scr_getDrinkName();
+
+
 </string>
           </argument>
         </arguments>

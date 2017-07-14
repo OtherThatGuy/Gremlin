@@ -189,6 +189,8 @@ if nextdrop&lt;=0 and full &gt; 0{
         //but, this is practically impossible with the randomness of the liquids.
         type[c_blue] = other.type[c_blue];
         type[c_red] = other.type[c_red];
+        type[c_green] = other.type[c_green];
+        type[c_purple] = other.type[c_purple];
         
         size=clamp(sqr(abs(angle_difference(other.image_angle,0))/36),4,25)
         xvel=other.xvel/8+lengthdir_x(8,other.image_angle+90)+random_range(-1,1)
@@ -222,6 +224,8 @@ if nextdrop&lt;=0 and full &gt; 0{
  if (full = 0) {
   type[c_blue] = 0;
   type[c_red] = 0;
+  type[c_green] = 0;
+  type[c_purple] = 0;
   shakeamount = 0;
   shaked = false;
  }
@@ -310,6 +314,9 @@ draw_rectangle(other.x - other.sprite_xoffset / 3, other.y - other.sprite_yoffse
 //DEBUG: see the porcentage of the types
 draw_text(x+150, y, string(type[c_red]));
 draw_text(x+150, y-50, string(type[c_blue]));
+draw_text(x+150, y+50, string(type[c_green]));
+draw_text(x+150, y+100, string(type[c_purple]));
+
 
 </string>
           </argument>

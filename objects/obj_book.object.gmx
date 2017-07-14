@@ -53,15 +53,30 @@ recipe[2,1]=2
 recipe[2,2]="10-20% blue"
 recipe[2,3]="1-5% red"
 
-recipe[3,0]="Crangus"
+recipe[3,0]="Test Drink 3"
 recipe[3,1]=3
-recipe[3,2]="Crogus"
-recipe[3,3]="Spingus"
+recipe[3,2]="10-20% G"
+recipe[3,3]="1-5% R"
+recipe[3,4]="30-40% B"
 
-recipe[4,0]="---"
+recipe[4,0]="Test Drink 4"
 recipe[4,1]=4
-recipe[4,2]="*"
-recipe[4,3]="*"
+recipe[4,2]="1-5 g"
+recipe[4,3]="15-30 b"
+
+recipe[5,0]="Test Drink 5"
+recipe[5,1]=5
+recipe[5,2]="30-50 p"
+recipe[5,3]="20-30 g"
+recipe[5,4]="10-50 r"
+recipe[5,5]="shaked"
+
+recipe[6,0]="Test Drink 6"
+recipe[6,1]=6
+recipe[6,2]="15-20 p"
+recipe[6,3]="5-10 b"
+recipe[6,4]="30-40 g"
+recipe[6,5]="shaked"
 </string>
           </argument>
         </arguments>

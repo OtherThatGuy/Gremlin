@@ -119,6 +119,8 @@ other.curColor=merge_colour(other.curColor,color,0.02*(2-other.SpillAmount/100))
 //liquids have their own type. so we sum those into the types of the glass.
 other.type[c_blue] = type[c_blue];
 other.type[c_red] = type[c_red];
+other.type[c_green] = type[c_green];
+other.type[c_purple] = type[c_purple];
 other.shaked = shaked;
 //instance_destroy();
  }
@@ -154,7 +156,7 @@ if (point_in_rectangle(x,y,other.x - other.sprite_xoffset, other.y - other.sprit
 other.full += size/10;
 other.color=merge_colour(other.color,color,0.02*(2-other.full/100));
 //just sums the type of the mixer if the color of the liquid is correct
-if (color = c_blue or color = c_red) {
+if (color = c_blue or color = c_red or color = c_green or color = c_purple) {
   other.type[color] += 0.1;
 }
 

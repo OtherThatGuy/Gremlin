@@ -27,11 +27,44 @@
             <kind>1</kind>
             <string>//initialize global variables
 
+order[0] = "Test Drink";
+order[1] = "Test Drink 2";
+order[2] = "Test Drink 3";
+order[3] = "Test Drink 4";
+order[4] = "Test Drink 5";
+order[5] = "Test Drink 6";
+
+maxorders = array_length_1d(order) - 1;
+ 
 global.currentorder = "";
 global.curorderTime = 0;
 global.money = 0;
-scr_getOrderName();
+daystart = false;
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_getOrderName();
 </string>
           </argument>
         </arguments>
@@ -80,13 +113,41 @@ scr_getOrderName();
             <string>if (global.curorderTime &gt;= 0) {
  global.curorderTime -= 0.1;
 }
+if (daystart = true) {
+ if (global.curorderTime &lt;= 0 and global.currentorder != "") {
+  scr_getOrderName();
+  global.money -= 50;
+  var noti = instance_create(0, 0, obj_notification);
+  noti.commentType = 2;
+  noti.newy += 64;
+ }
+}
 
-if (global.curorderTime &lt;= 0 and global.currentorder != "") {
- scr_getOrderName();
- global.money -= 50;
- var noti = instance_create(0, 0, obj_notification);
- noti.commentType = 2;
- noti.newy += 64;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room = room_Test) {
+ daystart = true;
+ alarm[0] = room_speed*2.5;
 }
 </string>
           </argument>
