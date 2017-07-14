@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_test1</sound>
+    <sound>sound\snd_test2</sound>
+    <sound>sound\snd_static</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>
     <sprite>sprites\spr_mixerPlaceHolder</sprite>
@@ -27,6 +31,7 @@
     <sprite>sprites\spr_serve</sprite>
     <sprite>sprites\spr_ragUp</sprite>
     <sprite>sprites\spr_ragDn</sprite>
+    <sprite>sprites\spr_radio</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -58,6 +63,10 @@
     <object>objects\obj_game</object>
     <object>objects\obj_serve</object>
     <object>objects\obj_rag</object>
+    <object>objects\obj_stationDial</object>
+    <object>objects\obj_volumeDial</object>
+    <object>objects\obj_radioButton</object>
+    <object>objects\obj_radio</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>

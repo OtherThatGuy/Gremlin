@@ -19,7 +19,7 @@ draw_set_valign(fa_middle)</code>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1016</w>
+    <w>984</w>
     <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
@@ -30,8 +30,8 @@ draw_set_valign(fa_middle)</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>90</xoffset>
-    <yoffset>80</yoffset>
+    <xoffset>25</xoffset>
+    <yoffset>1366</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -80,8 +80,6 @@ draw_set_valign(fa_middle)</code>
     <instance objName="obj_bottle" x="704" y="512" name="inst_E93A114F" locked="0" code="color=c_red&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bottle" x="832" y="512" name="inst_97032115" locked="0" code="color=c_green&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bottle" x="960" y="512" name="inst_F1E36844" locked="0" code="color=c_blue&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dial" x="128" y="960" name="inst_13945C98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="256" y="960" name="inst_93FF3332" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_glass" x="1216" y="384" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_book" x="1728" y="960" name="inst_1CCC1122" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ingredient" x="1088" y="704" name="inst_941D6B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -89,6 +87,10 @@ draw_set_valign(fa_middle)</code>
     <instance objName="obj_game" x="320" y="192" name="inst_B26401C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_serve" x="1152" y="704" name="inst_A41A97C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rag" x="512" y="256" name="inst_B5ACAE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_radio" x="192" y="768" name="inst_33860F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stationDial" x="64" y="960" name="inst_767AD5DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_radioButton" x="320" y="960" name="inst_A26914AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_volumeDial" x="192" y="960" name="inst_76ACE411" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
