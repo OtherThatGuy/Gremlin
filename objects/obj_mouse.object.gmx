@@ -79,6 +79,11 @@ if mouse_check_button_pressed(mb_left){
         tool.held=true
         toolName="ingredient"
     }
+    else if place_meeting(x,y,obj_rag){
+        tool = instance_place(x,y,obj_rag)
+        tool.held=true
+        toolName="rag"
+    }
     else if place_meeting(x,y,obj_dial){
         tool = instance_place(x,y,obj_dial)
         toolName="dial"
@@ -119,6 +124,11 @@ if instance_exists(tool){
     }
     else if toolName="ingredient"{
         image_index = 1;
+        tool.x=x
+        tool.y=y
+        if mouse_check_button_released(mb_left) tool.held=false
+    }
+    else if toolName="rag"{
         tool.x=x
         tool.y=y
         if mouse_check_button_released(mb_left) tool.held=false
