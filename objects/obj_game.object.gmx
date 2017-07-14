@@ -39,7 +39,9 @@ maxorders = array_length_1d(order) - 1;
 global.currentorder = "";
 global.curorderTime = 0;
 global.money = 0;
-daystart = false;
+global.daystart = false;
+global.dayend = false;
+global.timeleft = 0;
 
 
 </string>
@@ -88,6 +90,7 @@ daystart = false;
           <argument>
             <kind>1</kind>
             <string>global.curorderTime = clamp(global.curorderTime, 0, 100000 / room_speed);
+global.timeleft = clamp(global.timeleft, 0, room_speed*60);
 </string>
           </argument>
         </arguments>
@@ -110,19 +113,55 @@ daystart = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.curorderTime &gt;= 0) {
+            <string>if (global.dayend = false) {
+ global.timeleft -= 0.1;
+if (global.curorderTime &gt;= 0) {
  global.curorderTime -= 0.1;
 }
-if (daystart = true) {
+}
+
+if (global.daystart = true) {
+ if (global.dayend = false) {
  if (global.curorderTime &lt;= 0 and global.currentorder != "") {
-  scr_getOrderName();
-  global.money -= 50;
-  var noti = instance_create(0, 0, obj_notification);
-  noti.commentType = 2;
-  noti.newy += 64;
+ scr_getOrderName();
+ global.money -= 50;
+ var noti = instance_create(0, 0, obj_notification);
+ noti.commentType = 2;
+ noti.newy += 64;
+
+ }
  }
 }
 
+if (global.timeleft &lt;= 0) {
+ global.dayend = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room = room_Test) {
+ global.daystart = false;
+ global.dayend = false;
+}
 </string>
           </argument>
         </arguments>
@@ -146,7 +185,8 @@ if (daystart = true) {
           <argument>
             <kind>1</kind>
             <string>if (room = room_Test) {
- daystart = true;
+ global.daystart = true;
+ global.timeleft = room_speed*1;
  alarm[0] = room_speed*2.5;
 }
 </string>
@@ -170,6 +210,30 @@ if (daystart = true) {
         <isnot>0</isnot>
       </action>
     </event>
+    <event eventtype="7" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.daystart = false;
+global.dayend = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -187,9 +251,12 @@ if (daystart = true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x, y, string(global.currentorder));
+            <string>if (room = room_Test) {
+draw_text(x, y, string(global.currentorder));
 draw_text(x, y+100, string(global.curorderTime));
 draw_text(x, y+150, string(global.money));
+draw_text(x, y+200, string(global.timeleft));
+}
 </string>
           </argument>
         </arguments>

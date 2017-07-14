@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_wall</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-glass = -1;
+            <string>glass = -1;
 canserve = false;
 </string>
           </argument>
@@ -77,8 +76,8 @@ with (game) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(place_meeting(x+sprite_width / 2, y-50, obj_glass)) {
- glass = instance_place(x+sprite_width / 2, y-50, obj_glass);
+            <string>if(place_meeting(x, y, obj_glass)) {
+ glass = instance_place(x, y, obj_glass);
 } else {
  glass = -1
 }

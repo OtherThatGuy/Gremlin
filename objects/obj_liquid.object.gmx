@@ -3,7 +3,7 @@
   <spriteName>spr_mouse</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -34,6 +34,8 @@ destroy=false
 
 type[c_red] = 0;
 type[c_blue] = 0;
+type[c_green] = 0;
+type[c_purple] = 0;
 
 shaked = false;
 </string>

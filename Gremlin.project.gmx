@@ -32,8 +32,11 @@
     <sprite>sprites\spr_ragUp</sprite>
     <sprite>sprites\spr_ragDn</sprite>
     <sprite>sprites\spr_radio</sprite>
+    <sprite>sprites\spr_costumer</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_collision.gml</script>
@@ -67,6 +70,7 @@
     <object>objects\obj_volumeDial</object>
     <object>objects\obj_radioButton</object>
     <object>objects\obj_radio</object>
+    <object>objects\obj_costumer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Test</room>

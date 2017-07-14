@@ -209,8 +209,7 @@ SpillAmount=clamp(SpillAmount,0,1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-if (hasHorPuddle = true) {
+            <string>if (hasHorPuddle = true) {
    draw_sprite_ext(currenthorsprite, 0, x, horY, 1, curPuddleHeight, 0, SpillColor, curSpillAmount);
 }
 
@@ -218,7 +217,7 @@ if (hasVerPuddle = true) {
    draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, SpillColor, curSpillAmount);
 }
 
-draw_text(x,y,string(SpillAmount))
+//draw_text(x,y,string(SpillAmount))
 </string>
           </argument>
         </arguments>
