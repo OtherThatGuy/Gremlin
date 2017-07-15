@@ -142,6 +142,7 @@ if nextdrop&lt;=0{
     nextdrop=2
     with instance_create(x+lengthdir_x(sprite_yoffset*0.75,image_angle+90),y+lengthdir_y(sprite_yoffset*0.75,image_angle+90),obj_liquid){
         color=other.color
+        type[other.color]=100
         size=clamp(sqr(abs(angle_difference(other.image_angle,0))/36),4,25)
         xvel=other.xvel/8+lengthdir_x(8,other.image_angle+90)+random_range(-1,1)
         yvel=other.yvel/8+lengthdir_y(8,other.image_angle+90)+random_range(-1,1)

@@ -210,11 +210,11 @@ SpillAmount=clamp(SpillAmount,0,1)
           <argument>
             <kind>1</kind>
             <string>if (hasHorPuddle = true) {
-   draw_sprite_ext(currenthorsprite, 0, x, horY, 1, curPuddleHeight, 0, SpillColor, curSpillAmount);
+   draw_sprite_ext(currenthorsprite, 0, x, horY, 1, curPuddleHeight, 0, SpillColor, curSpillAmount/2);
 }
 
 if (hasVerPuddle = true) {
-   draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, SpillColor, curSpillAmount);
+   draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, SpillColor, curSpillAmount/2);
 }
 
 //draw_text(x,y,string(SpillAmount))

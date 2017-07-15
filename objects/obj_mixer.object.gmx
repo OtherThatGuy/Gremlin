@@ -46,6 +46,8 @@ type[c_blue] = 0;
 type[c_green] = 0;
 type[c_purple] = 0;
 
+typeTotal=0
+
 shakeamount = 0;
 
 shaked = false;
@@ -72,7 +74,7 @@ shaked = false;
           <argument>
             <kind>1</kind>
             <string>//just clamping
-full= clamp(full, 0, 25);
+full= clamp(full, 0, 100);
 shakeamount = clamp(shakeamount, 0, 20);
 type[c_red] = clamp(type[c_red], 0, 100);
 type[c_blue] = clamp(type[c_blue], 0, 100);
@@ -252,14 +254,9 @@ if nextdrop&lt;=0 and full &gt; 0{
             <kind>1</kind>
             <string>///shaking
 if (held) {
-  if (yvel &lt;= lengthdir_y(20, 90)) {
-   shakeamount += 0.1;
+  if abs(yvel &gt;= 20) {
+   shakeamount += 1;
  }
- 
- if (yvel &gt;= lengthdir_y(20, 270)) {
-   shakeamount += 0.1;
- }
-
 
 }
 
@@ -317,7 +314,7 @@ draw_text(x+150, y-50, string(type[c_blue]));
 draw_text(x+150, y+50, string(type[c_green]));
 draw_text(x+150, y+100, string(type[c_purple]));
 
-
+draw_text(x+150, y+150, string(shaked))
 </string>
           </argument>
         </arguments>

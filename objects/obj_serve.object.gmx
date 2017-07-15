@@ -92,9 +92,9 @@ if (glass = -1) {
 
 if (canserver = true) {
  //make an actual point and click button for serving
- if (keyboard_check_pressed(vk_left) and global.currentorder != "") {
-  scr_Serve(glass.drinkname, glass.SpillAmount)
-  glass.SpillAmount = 0;
+ if (obj_serveButton.on and global.currentorder != "") {
+  scr_Serve(glass.drinkname, glass.full)
+  glass.full = 0;
   glass.type[c_blue] = 0;
   glass.type[c_red] = 0;
   glass.type[c_green] = 0;

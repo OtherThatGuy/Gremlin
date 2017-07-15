@@ -3,7 +3,7 @@
   <spriteName>spr_radio</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>on=1
 station=0
-volume=1
+volume=0.5
 
 closeToStation=0
 
@@ -149,8 +149,8 @@ audio_sound_gain(static,clamp((closeToStation-2)/10,0,1)*volume*on,0)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x,y,string(station))
-draw_text(x,y+64,string(closeToStation))
+draw_text(x-64,y-32,string(station))
+draw_text(x-64,y,string(closeToStation))
 </string>
           </argument>
         </arguments>

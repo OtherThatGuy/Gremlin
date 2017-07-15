@@ -69,7 +69,7 @@ if held{
     lastAngle=image_angle
     xvel=mean(x-lastx,xvel)
     yvel=mean(y-lasty,yvel)
-    image_angle-=angle_difference(image_angle,0)/3
+    image_angle-=angle_difference(image_angle,0)/2
     image_angle-=xvel
 }
 else{
@@ -136,7 +136,7 @@ scr_moveOutFromWall()
             <kind>1</kind>
             <string>
 if !other.destroy{
-    color=merge_colour(color,other.color,0.01)
+    color=merge_colour(color,other.color,0.008)
     other.destroy = true
 }
 </string>
@@ -165,7 +165,7 @@ if !other.destroy{
 if other.SpillAmount&lt;=0{
     other.hasVerPuddle=false
     other.hasHorPuddle=false
-    color=merge_colour(color,other.SpillColor,0.01)
+    color=merge_colour(color,other.SpillColor,0.003)
 }
 </string>
           </argument>

@@ -32,10 +32,10 @@ size=16
 next=-1
 destroy=false
 
-type[c_red] = 0;
-type[c_blue] = 0;
-type[c_green] = 0;
-type[c_purple] = 0;
+percent[c_red] = 0;
+percent[c_blue] = 0;
+percent[c_green] = 0;
+percent[c_purple] = 0;
 
 shaked = false;
 </string>
@@ -115,14 +115,11 @@ y+=yvel
             <kind>1</kind>
             <string>if (!destroy) {
 if (point_in_rectangle(x,y, other.x - other.sprite_width / 2, other.y - other.sprite_height / 1.85, other.x + other.sprite_width / 2, other.y - other.sprite_height / 3)) {
-other.SpillAmount += size/10;
-other.curColor=merge_colour(other.curColor,color,0.02*(2-other.SpillAmount/100));
+other.full += size/10;
+other.curColor=merge_colour(other.curColor,color,0.02*(2-other.full/100));
 
 //liquids have their own type. so we sum those into the types of the glass.
-other.type[c_blue] = type[c_blue];
-other.type[c_red] = type[c_red];
-other.type[c_green] = type[c_green];
-other.type[c_purple] = type[c_purple];
+other.type[color] += size/10;
 other.shaked = shaked;
 //instance_destroy();
  }
@@ -153,13 +150,13 @@ xvel*=random_range(-0.5,0.5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!destroy) {
+            <string>if (!destroy)&amp;&amp;other.full&lt;100{
 if (point_in_rectangle(x,y,other.x - other.sprite_xoffset, other.y - other.sprite_yoffset, other.x + other.sprite_xoffset / 3, other.y)) {
 other.full += size/10;
 other.color=merge_colour(other.color,color,0.02*(2-other.full/100));
 //just sums the type of the mixer if the color of the liquid is correct
 if (color = c_blue or color = c_red or color = c_green or color = c_purple) {
-  other.type[color] += 0.1;
+  other.type[color] += size/10;
 }
 
 //instance_destroy();
@@ -208,6 +205,7 @@ xvel*=random_range(-0.5,0.5)
           <argument>
             <kind>1</kind>
             <string>draw_set_color(color)
+draw_set_alpha(0.1)
 draw_circle(x,y,size,false)
 if !destroy{
     if instance_exists(next) draw_line_width(x,y,next.x,next.y,size*2)
@@ -219,6 +217,7 @@ if !destroy{
 } else draw_circle(x,y,size,false)
 
 draw_set_color(c_white)
+draw_set_alpha(1)
 /*
 DEBUG: show the porcentages of the types
 draw_text(x+50, y, string(type[c_blue]));

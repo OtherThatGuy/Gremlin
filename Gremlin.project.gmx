@@ -63,6 +63,7 @@
     <object>objects\obj_liquid</object>
     <object>objects\obj_dial</object>
     <object>objects\obj_button</object>
+    <object>objects\obj_serveButton</object>
     <object>objects\obj_book</object>
     <object>objects\obj_notification</object>
     <object>objects\obj_serve</object>
