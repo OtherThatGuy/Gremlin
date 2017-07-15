@@ -32,11 +32,6 @@ size=16
 next=-1
 destroy=false
 
-percent[c_red] = 0;
-percent[c_blue] = 0;
-percent[c_green] = 0;
-percent[c_purple] = 0;
-
 shaked = false;
 </string>
           </argument>
@@ -113,13 +108,14 @@ y+=yvel
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!destroy) {
+            <string>if (!destroy)&amp;&amp;other.full&lt;100 {
 if (point_in_rectangle(x,y, other.x - other.sprite_width / 2, other.y - other.sprite_height / 1.85, other.x + other.sprite_width / 2, other.y - other.sprite_height / 3)) {
-other.full += size/10;
-other.curColor=merge_colour(other.curColor,color,0.02*(2-other.full/100));
+other.full++;
+other.amount[global.red]+=7.65*(color_get_red(color)/255)
+other.amount[global.green]+=7.65*(color_get_green(color)/255)
+other.amount[global.blue]+=7.65*(color_get_blue(color)/255)
 
 //liquids have their own type. so we sum those into the types of the glass.
-other.type[color] += size/10;
 other.shaked = shaked;
 //instance_destroy();
  }
@@ -152,12 +148,11 @@ xvel*=random_range(-0.5,0.5)
             <kind>1</kind>
             <string>if (!destroy)&amp;&amp;other.full&lt;100{
 if (point_in_rectangle(x,y,other.x - other.sprite_xoffset, other.y - other.sprite_yoffset, other.x + other.sprite_xoffset / 3, other.y)) {
-other.full += size/10;
-other.color=merge_colour(other.color,color,0.02*(2-other.full/100));
+other.full++;
+other.amount[global.red]+=7.65*(color_get_red(color)/255)
+other.amount[global.green]+=7.65*(color_get_green(color)/255)
+other.amount[global.blue]+=7.65*(color_get_blue(color)/255)
 //just sums the type of the mixer if the color of the liquid is correct
-if (color = c_blue or color = c_red or color = c_green or color = c_purple) {
-  other.type[color] += size/10;
-}
 
 //instance_destroy();
  }

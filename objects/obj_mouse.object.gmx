@@ -84,6 +84,11 @@ if mouse_check_button_pressed(mb_left){
         tool.held=true
         toolName="rag"
     }
+    else if place_meeting(x,y,obj_iceBucket){
+        tool = instance_create(x,y,obj_ice)
+        tool.held=true
+        toolName="ingredient"
+    }
     else if place_meeting(x,y,obj_dial){
         tool = instance_place(x,y,obj_dial)
         toolName="dial"

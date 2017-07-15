@@ -38,15 +38,11 @@ ingredientCount=0
 ingredient[0]=""
 
 
-type[c_red] = 0;
-type[c_blue] = 0;
-type[c_green] = 0;
-type[c_purple] = 0;
-
-typeTotal=0
-
 shaked = false;
-drinkname = "";
+
+amount[global.red]=0
+amount[global.green]=0
+amount[global.blue]=0
 </string>
           </argument>
         </arguments>
@@ -69,7 +65,7 @@ drinkname = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>full = clamp(full, 0, sprite_get_height(sprite_index));
+            <string>full = clamp(full, 0, 100);
 //curSpillAmount = lerp(curSpillAmount, full, .05);
 if (held) {
  xvel=mean(x-lastx,xvel)
@@ -93,14 +89,11 @@ if (held) {
 lastx = x;
 lasty = y;
 
-//colorcounter = clamp(colorcounter, 0, 0.9998);
+amount[global.red]=clamp(amount[global.red],0,255)
+amount[global.green]=clamp(amount[global.green],0,255)
+amount[global.blue]=clamp(amount[global.blue],0,255)
 
-typeTotal=type[c_red]+type[c_green]+type[c_blue]+type[c_purple]
-
-//this isn't a very good idea since this script takes ALOT of code and may even use for loops, figure out a way so that it only gets executed when it changes
-scr_getDrinkName();
-
-
+curColor=make_color_rgb(amount[global.red],amount[global.green],amount[global.blue])
 </string>
           </argument>
         </arguments>
@@ -161,8 +154,7 @@ scr_moveOutFromWall()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_part_ext(spr_glassPlaceHolder, 1, 0, 0, sprite_get_width(spr_glassPlaceHolder), full, x - sprite_get_width(spr_glassPlaceHolder) / 2, y + sprite_get_height(spr_glassPlaceHolder) / 2, 1, -1, curColor, 0.5);
-draw_text(x+20, y, string(drinkname));
+            <string>draw_sprite_part_ext(spr_glassPlaceHolder, 1, 0, 0, sprite_get_width(spr_glassPlaceHolder), sprite_get_height(spr_glassPlaceHolder)*(full/100), x - sprite_get_width(spr_glassPlaceHolder) / 2, y + sprite_get_height(spr_glassPlaceHolder) / 2, 1, -1, curColor, 0.5);
 </string>
           </argument>
         </arguments>
@@ -184,9 +176,10 @@ draw_text(x+20, y, string(drinkname));
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(x+150, y, string(type[c_red]));
-draw_text(x+150, y-50, string(type[c_blue]));
-draw_text(x+150, y-100, string(ingredientCount));
+draw_text(x+150, y, string(full));
+draw_text(x+150, y-32, string(color_get_red(curColor)));
+draw_text(x+150, y-64, string(color_get_green(curColor)));
+draw_text(x+150, y-100, string(color_get_blue(curColor)));
 </string>
           </argument>
         </arguments>

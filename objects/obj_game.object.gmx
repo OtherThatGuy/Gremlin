@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,13 +27,14 @@
             <kind>1</kind>
             <string>//initialize global variables
 
-order[0] = "Test Drink";
-order[1] = "Test Drink 2";
-order[2] = "Test Drink 3";
-order[3] = "Test Drink 4";
-order[4] = "Test Drink 5";
-order[5] = "Test Drink 6";
-order[6] = "Test Drink 7";
+order[0] = "Ice Spike";
+order[1] = "Goblin Blue";
+order[2] = "Fire Bolt";
+order[3] = "Mana Potion";
+order[4] = "Dragon Breath";
+order[5] = "Dungeon Brew";
+order[6] = "King's Field";
+order[7] = "'Crangus'";
 
 maxorders = array_length_1d(order) - 1;
  
@@ -45,7 +46,9 @@ global.dayend = false;
 global.timeleft = 0;
 global.day = 1;
 
-
+global.red=make_colour_rgb(255,0,0)
+global.green=make_colour_rgb(0,255,0)
+global.blue=make_colour_rgb(0,0,255)
 </string>
           </argument>
         </arguments>
@@ -280,6 +283,8 @@ draw_text(x, y+200, string(global.timeleft));
 }
 
 draw_text(x,y, string(global.dayend));
+
+draw_sprite(spr_vignette,0,0,0)
 </string>
           </argument>
         </arguments>

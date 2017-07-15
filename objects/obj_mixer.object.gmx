@@ -41,10 +41,9 @@ last=-1
 
 //types are supposed to be the porcentage of a certain drink that the mixer contains
 //so the porcentage of red liquid on the mixer would be c_red
-type[c_red] = 0;
-type[c_blue] = 0;
-type[c_green] = 0;
-type[c_purple] = 0;
+amount[global.red]=0
+amount[global.green]=0
+amount[global.blue]=0
 
 typeTotal=0
 
@@ -76,8 +75,6 @@ shaked = false;
             <string>//just clamping
 full= clamp(full, 0, 100);
 shakeamount = clamp(shakeamount, 0, 20);
-type[c_red] = clamp(type[c_red], 0, 100);
-type[c_blue] = clamp(type[c_blue], 0, 100);
 
 </string>
           </argument>
@@ -189,10 +186,7 @@ if nextdrop&lt;=0 and full &gt; 0{
         
         //the original code for this was basically to decrease the porcentage of the others, and the liquid should have the sign of the other / 10
         //but, this is practically impossible with the randomness of the liquids.
-        type[c_blue] = other.type[c_blue];
-        type[c_red] = other.type[c_red];
-        type[c_green] = other.type[c_green];
-        type[c_purple] = other.type[c_purple];
+        
         
         size=clamp(sqr(abs(angle_difference(other.image_angle,0))/36),4,25)
         xvel=other.xvel/8+lengthdir_x(8,other.image_angle+90)+random_range(-1,1)
@@ -201,37 +195,6 @@ if nextdrop&lt;=0 and full &gt; 0{
         other.last=id
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///DEBUG: resetting type porcentages to 0
-
- if (full = 0) {
-  type[c_blue] = 0;
-  type[c_red] = 0;
-  type[c_green] = 0;
-  type[c_purple] = 0;
-  shakeamount = 0;
-  shaked = false;
- }
-
 </string>
           </argument>
         </arguments>
@@ -309,12 +272,9 @@ DEBUG: see the collision rectangle for liquids
 draw_rectangle(other.x - other.sprite_xoffset / 3, other.y - other.sprite_yoffset, other.x + other.sprite_xoffset / 3, other.y, false);
 */
 //DEBUG: see the porcentage of the types
-draw_text(x+150, y, string(type[c_red]));
-draw_text(x+150, y-50, string(type[c_blue]));
-draw_text(x+150, y+50, string(type[c_green]));
-draw_text(x+150, y+100, string(type[c_purple]));
 
-draw_text(x+150, y+150, string(shaked))
+
+draw_text(x+150, y, string(shaked))
 </string>
           </argument>
         </arguments>
