@@ -5,9 +5,13 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_test1</sound>
-    <sound>sound\snd_test2</sound>
     <sound>sound\snd_static</sound>
+    <sound>sound\snd_song1</sound>
+    <sound>sound\snd_song2</sound>
+    <sound>sound\snd_song3</sound>
+    <sound>sound\snd_song4</sound>
+    <sound>sound\snd_song5</sound>
+    <sound>sound\snd_song6</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>

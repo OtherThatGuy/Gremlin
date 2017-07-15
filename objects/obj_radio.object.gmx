@@ -30,18 +30,27 @@ station=0
 volume=0.5
 
 closeToStation=0
+close=0
 
 
-songStation[1]=30
-songStation[2]=80
+songStation[1]=15
+songStation[2]=30
+songStation[3]=50
+songStation[4]=60
+songStation[5]=80
+songStation[6]=95
 
 
 static = snd_static
-song[1]=snd_test1
-song[2]=snd_test2
+song[1]=snd_song1
+song[2]=snd_song2
+song[3]=snd_song3
+song[4]=snd_song4
+song[5]=snd_song5
+song[6]=snd_song6
 
 
-for(var i=0;i&lt;=array_height_2d(song)+1;i++){
+for(var i=1;i&lt;array_length_1d(song);i++){
     audio_sound_gain(song[i],0,0)
     audio_sound_set_track_position(song[i],random(audio_sound_length(song[i])))
     
@@ -51,7 +60,7 @@ audio_sound_set_track_position(static,random(audio_sound_length(static)))
 
 syncGroup= audio_create_sync_group(true)
 audio_play_in_sync_group(syncGroup,static)
-for(var i=0;i&lt;=array_height_2d(song)+1;i++) audio_play_in_sync_group(syncGroup,song[i])
+for(var i=1;i&lt;array_length_1d(song);i++) audio_play_in_sync_group(syncGroup,song[i])
 
 
 
@@ -81,14 +90,58 @@ audio_start_sync_group(syncGroup)
             <string>station=clamp(station,1,100)
 volume=clamp(volume,0.1,1)
 closeToStation=100
-for(var i=1;i&lt;=array_height_2d(song)+1;i++){
-    var close=(abs(station-songStation[i]))
+for(var i=1;i&lt;array_length_1d(song);i++){
+    close=(abs(station-songStation[i]))
     audio_sound_gain(song[i],clamp(1-close/10,0,1)*volume*on,0)
     closeToStation=min(closeToStation, close)
     
 }
 
 audio_sound_gain(static,clamp((closeToStation-2)/10,0,1)*volume*on,0)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_destroy_sync_group(syncGroup)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>on=false
 </string>
           </argument>
         </arguments>

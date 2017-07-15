@@ -23,7 +23,7 @@ global.blue=make_colour_rgb(0,0,255)</code>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1016</w>
+    <w>1008</w>
     <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
@@ -34,8 +34,8 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>9</xoffset>
-    <yoffset>305</yoffset>
+    <xoffset>185</xoffset>
+    <yoffset>1693</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="background0" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -91,9 +91,9 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <instance objName="obj_serve" x="1232" y="784" name="inst_A41A97C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rag" x="576" y="688" name="inst_B5ACAE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_radio" x="176" y="976" name="inst_33860F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stationDial" x="192" y="992" name="inst_767AD5DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_radioButton" x="320" y="928" name="inst_A26914AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_volumeDial" x="288" y="992" name="inst_76ACE411" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stationDial" x="208" y="976" name="inst_767AD5DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_radioButton" x="272" y="928" name="inst_A26914AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_volumeDial" x="272" y="976" name="inst_76ACE411" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_costumer" x="64" y="336" name="inst_B368DC59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1536" y="848" name="inst_3E3151C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1600" y="848" name="inst_8D2BF62C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

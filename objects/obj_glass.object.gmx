@@ -89,11 +89,11 @@ if (held) {
 lastx = x;
 lasty = y;
 
-amount[global.red]=clamp(amount[global.red],0,255)
-amount[global.green]=clamp(amount[global.green],0,255)
-amount[global.blue]=clamp(amount[global.blue],0,255)
+//amount[global.red]=clamp(amount[global.red],0,255)
+//amount[global.green]=clamp(amount[global.green],0,255)
+//amount[global.blue]=clamp(amount[global.blue],0,255)
 
-curColor=make_color_rgb(amount[global.red],amount[global.green],amount[global.blue])
+curColor=make_color_rgb(min(255,amount[global.red]),min(255,amount[global.green]),min(255,amount[global.blue]))
 </string>
           </argument>
         </arguments>
@@ -177,9 +177,9 @@ scr_moveOutFromWall()
             <kind>1</kind>
             <string>draw_self();
 draw_text(x+150, y, string(full));
-draw_text(x+150, y-32, string(color_get_red(curColor)));
-draw_text(x+150, y-64, string(color_get_green(curColor)));
-draw_text(x+150, y-100, string(color_get_blue(curColor)));
+draw_text(x+150, y-32, string(amount[global.red]));
+draw_text(x+150, y-64, string(amount[global.green]));
+draw_text(x+150, y-100, string(amount[global.blue]));
 </string>
           </argument>
         </arguments>

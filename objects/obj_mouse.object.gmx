@@ -61,6 +61,7 @@ y=mean(mouse_y,y)
 
 
 if mouse_check_button_pressed(mb_left){
+    image_index=1
     if place_meeting(x,y,obj_bottle){
         tool = instance_place(x,y,obj_bottle)
         tool.held=true
