@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -33,6 +33,7 @@ order[2] = "Test Drink 3";
 order[3] = "Test Drink 4";
 order[4] = "Test Drink 5";
 order[5] = "Test Drink 6";
+order[6] = "Test Drink 7";
 
 maxorders = array_length_1d(order) - 1;
  
@@ -42,6 +43,7 @@ global.money = 0;
 global.daystart = false;
 global.dayend = false;
 global.timeleft = 0;
+global.day = 1;
 
 
 </string>
@@ -133,9 +135,21 @@ if (global.daystart = true) {
  }
 }
 
-if (global.timeleft &lt;= 0) {
+
+if (global.timeleft &lt;= 0 and room == room_Test) {
  global.dayend = true;
+ 
+ if (global.dayend = true and room == room_Test) {
+  if (room != room_Template) {
+   room_goto(room_Template);
+  }
+ }
+ 
 }
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -158,9 +172,10 @@ if (global.timeleft &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room = room_Test) {
+            <string>if (room == room_Test) {
  global.daystart = false;
  global.dayend = false;
+ alarm[0] = -1;
 }
 </string>
           </argument>
@@ -184,11 +199,16 @@ if (global.timeleft &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room = room_Test) {
+            <string>if (room == room_Test) {
+ global.currentorder = "";
+ global.curorderTime = 0;
  global.daystart = true;
- global.timeleft = room_speed*1;
- alarm[0] = room_speed*2.5;
+ global.dayend = false;
+ global.timeleft = room_speed*5;
+ alarm[0] = room_speed*0.2;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -252,11 +272,14 @@ global.dayend = false;
           <argument>
             <kind>1</kind>
             <string>if (room = room_Test) {
+draw_rectangle_colour(x-1088, y, x, y +64, c_black,c_black, c_black, c_black, false);
 draw_text(x, y, string(global.currentorder));
 draw_text(x, y+100, string(global.curorderTime));
 draw_text(x, y+150, string(global.money));
 draw_text(x, y+200, string(global.timeleft));
 }
+
+draw_text(x,y, string(global.dayend));
 </string>
           </argument>
         </arguments>

@@ -1,7 +1,21 @@
-var i = round(random_range(0, maxorders));
+var orders = -1;
+
+switch(global.day) {
+  case 1:
+  orders = 2;
+  break;
+  case 2:
+  orders = 4;
+  break;
+  case 3:
+  orders = 6;
+  break;
+}
+
+var i = round(random_range(0, orders));
 
  global.currentorder = order[i];
- global.curorderTime = 10000 / room_speed;
+ global.curorderTime = room_speed*3.5;
 
 
 var notification = instance_create(0, 0, obj_notification);

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>targetalpha = 0;
 curAlpha = 0;
+image_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -55,12 +56,28 @@ curAlpha = 0;
  alphatarget = 0;
 }
 
-curalpha = lerp(image_alpha, alphatarget, .04);
+curalpha = lerp(image_alpha, alphatarget, .08);
 
 image_alpha = curalpha;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

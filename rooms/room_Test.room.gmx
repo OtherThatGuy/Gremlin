@@ -55,6 +55,7 @@ draw_set_valign(fa_middle)</code>
   </views>
   <instances>
     <instance objName="obj_mouse" x="0" y="0" name="inst_C430A2E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_game" x="1920" y="0" name="inst_B26401C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="960" y="848" name="inst_59FD7682" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="832" y="848" name="inst_A01DBB22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="896" y="848" name="inst_AD6AF904" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -75,14 +76,13 @@ draw_set_valign(fa_middle)</code>
     <instance objName="obj_wall" x="1344" y="848" name="inst_2F297171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1408" y="848" name="inst_8884ECB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1472" y="848" name="inst_A7C088CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1712" y="608" name="inst_E93A114F" locked="0" code="color=c_red&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1472" y="608" name="inst_97032115" locked="0" code="color=c_green&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1600" y="608" name="inst_F1E36844" locked="0" code="color=c_blue&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1712" y="608" name="inst_E93A114F" locked="0" code="color=c_red&#xA;&#xA;switch (color) {&#xA; case c_purple:&#xA; image_index = 0;&#xA; break;&#xA; case c_red:&#xA; image_index = 1;&#xA; break;&#xA; case c_blue:&#xA; image_index = 2;&#xA; break;&#xA; case c_green:&#xA; image_index = 3;&#xA; break;&#xA;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1472" y="608" name="inst_97032115" locked="0" code="color=c_green&#xA;&#xA;switch (color) {&#xA; case c_purple:&#xA; image_index = 0;&#xA; break;&#xA; case c_red:&#xA; image_index = 1;&#xA; break;&#xA; case c_blue:&#xA; image_index = 2;&#xA; break;&#xA; case c_green:&#xA; image_index = 3;&#xA; break;&#xA;&#xA;}&#xA;&#xA;if (global.day = 1) {&#xA; instance_destroy();&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1600" y="608" name="inst_F1E36844" locked="0" code="color=c_blue&#xA;&#xA;switch (color) {&#xA; case c_purple:&#xA; image_index = 0;&#xA; break;&#xA; case c_red:&#xA; image_index = 1;&#xA; break;&#xA; case c_blue:&#xA; image_index = 2;&#xA; break;&#xA; case c_green:&#xA; image_index = 3;&#xA; break;&#xA;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_glass" x="928" y="608" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_book" x="1744" y="960" name="inst_1CCC1122" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ingredient" x="1088" y="704" name="inst_941D6B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mixer" x="768" y="608" name="inst_B2CC3874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_game" x="320" y="192" name="inst_B26401C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_serve" x="1280" y="784" name="inst_A41A97C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rag" x="576" y="688" name="inst_B5ACAE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_radio" x="1408" y="480" name="inst_33860F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -100,7 +100,7 @@ draw_set_valign(fa_middle)</code>
     <instance objName="obj_wall" x="128" y="848" name="inst_01DDCBF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="848" name="inst_D34F567A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="848" name="inst_BFA4F3C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1824" y="608" name="inst_AAFFADA2" locked="0" code="color=c_purple&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1824" y="608" name="inst_AAFFADA2" locked="0" code="color=c_purple&#xA;&#xA;switch (color) {&#xA; case c_purple:&#xA; image_index = 0;&#xA; break;&#xA; case c_red:&#xA; image_index = 1;&#xA; break;&#xA; case c_blue:&#xA; image_index = 2;&#xA; break;&#xA; case c_green:&#xA; image_index = 3;&#xA; break;&#xA;&#xA;}&#xA;&#xA;if (global.day = 1 or global.day = 2) {&#xA; instance_destroy();&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

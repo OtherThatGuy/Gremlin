@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -156,6 +156,11 @@ if instance_exists(tool){
         if mouse_check_button_released(mb_left){
             tool.held=false
             tool.pour = false
+        }
+        
+        if keyboard_check_pressed(ord("R")){
+            tool.full = 0;
+            
         }
     }
 }

@@ -9,7 +9,7 @@
   <bboxmode>2</bboxmode>
   <bbox_left>16</bbox_left>
   <bbox_right>114</bbox_right>
-  <bbox_top>8</bbox_top>
+  <bbox_top>10</bbox_top>
   <bbox_bottom>244</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -21,5 +21,8 @@
   <height>256</height>
   <frames>
     <frame index="0">images\spr_BottlePlaceHolder_0.png</frame>
+    <frame index="1">images\spr_BottlePlaceHolder_1.png</frame>
+    <frame index="2">images\spr_BottlePlaceHolder_2.png</frame>
+    <frame index="3">images\spr_BottlePlaceHolder_3.png</frame>
   </frames>
 </sprite>

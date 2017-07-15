@@ -103,7 +103,7 @@ if (canserver = true) {
   glass.curColor = c_white;
   global.currentorder = "";
   global.curorderTime = 0;
-  alarm[0] = irandom_range(room_speed*0.5,room_speed*5.5);
+  alarm[0] = irandom_range(room_speed*0.5,room_speed*2.5);
 
  }
 }

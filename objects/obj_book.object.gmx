@@ -37,46 +37,52 @@ splashsize[0,0]=0
 cursplash=0
 
 recipe[0,0]="Title"
-recipe[0,1]= 0
-recipe[0,2]="Ingredient 1"
-recipe[0,3]="Ingredient 2"
+recipe[0,1]="Ingredient 1"
+recipe[0,2]="Ingredient 2"
 //etc
 
 recipe[1,0]="Test Title"
-recipe[1,1]= 1
-recipe[1,2]="5-10% blue"
-recipe[1,3]="10-20% red"
-recipe[1,4]="Shaked"
+recipe[1,1]="5-10% blue"
+recipe[1,2]="10-20% red"
 
 recipe[2,0]="Text Title 2"
-recipe[2,1]=2
-recipe[2,2]="10-20% blue"
-recipe[2,3]="1-5% red"
+recipe[2,1]="10-20% blue"
+recipe[2,2]="1-5% red"
+recipe[2,3]="Shaked"
 
 recipe[3,0]="Test Drink 3"
-recipe[3,1]=3
-recipe[3,2]="10-20% G"
-recipe[3,3]="1-5% R"
-recipe[3,4]="30-40% B"
+recipe[3,1]="20-30% b"
+recipe[3,2]="10-15 r"
+recipe[3,3]="Shaked"
 
 recipe[4,0]="Test Drink 4"
-recipe[4,1]=4
-recipe[4,2]="1-5 g"
-recipe[4,3]="15-30 b"
+recipe[4,1]="10-20 green"
+recipe[4,2]="25-35 blue"
+recipe[4,3]="1-5 red"
+
 
 recipe[5,0]="Test Drink 5"
-recipe[5,1]=5
-recipe[5,2]="30-50 p"
-recipe[5,3]="20-30 g"
-recipe[5,4]="10-50 r"
-recipe[5,5]="shaked"
+recipe[5,1]="1-5 Green"
+recipe[5,2]="15-25 blue"
 
 recipe[6,0]="Test Drink 6"
-recipe[6,1]=6
-recipe[6,2]="15-20 p"
-recipe[6,3]="5-10 b"
-recipe[6,4]="30-40 g"
-recipe[6,5]="shaked"
+recipe[6,1]="25-30 purple"
+recipe[6,2]="20-30 green"
+recipe[6,3]="10-15 red"
+recipe[6,4]="Shaked"
+
+recipe[7,0]="Test Drink 7"
+recipe[7,1]="15-20 purple"
+recipe[7,2]="5-10 blue"
+recipe[7,3]="30-40 green"
+recipe[7,4]="Shaked"
+
+recipe[8,0]=" "
+recipe[8,1]=" "
+recipe[8,2]=" "
+recipe[8,3]=" "
+recipe[8,4]=" "
+
 </string>
           </argument>
         </arguments>
@@ -213,15 +219,13 @@ draw_text(x+25,y+top,string(page+1))
 
 draw_text(x-95,y-top,recipe[page,0])
 //added thumbnails to the recipes.
-draw_sprite(spr_bookIcons, recipe[page,1],x-95,y-top+25+(25*1));
-for(var i=2;i&lt;array_length_2d(recipe,page);i++){
-    draw_text(x-95,y-top+35+(35*i),recipe[page,i])
+for(var i=1;i&lt;array_length_2d(recipe,page);i++){
+    draw_text(x-95,y-top+25+(25*i),recipe[page,i])
 }
 
 draw_text(x+94,y-top,recipe[page+1,0])
-draw_sprite(spr_bookIcons, recipe[page+1,1],x+94,y-top+25+(25*1));
-for(var i=2;i&lt;array_length_2d(recipe,page+1);i++){
-    draw_text(x+94,y-top+35+(35*i),recipe[page+1,i])
+for(var i=1;i&lt;array_length_2d(recipe,page+1);i++){
+    draw_text(x+94,y-top+25+(25*i),recipe[page+1,i])
 }
 
 draw_set_alpha(0.05)
