@@ -268,7 +268,7 @@ if shakeamount &gt;= 20 {
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(x+150, y-100, string(full));
+//draw_text(x+150, y-100, string(full));
 
 /*
 DEBUG: see the collision rectangle for liquids
@@ -277,7 +277,7 @@ draw_rectangle(other.x - other.sprite_xoffset / 3, other.y - other.sprite_yoffse
 //DEBUG: see the porcentage of the types
 
 
-draw_text(x+150, y, string(shaked))
+//draw_text(x+150, y, string(shaked))
 </string>
           </argument>
         </arguments>

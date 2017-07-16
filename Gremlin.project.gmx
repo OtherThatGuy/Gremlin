@@ -12,6 +12,8 @@
     <sound>sound\snd_song4</sound>
     <sound>sound\snd_song5</sound>
     <sound>sound\snd_song6</sound>
+    <sound>sound\snd_bell</sound>
+    <sound>sound\snd_blub</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>
@@ -57,6 +59,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
+    <font>fonts\fnt_radio</font>
     <font>fonts\fnt_book</font>
     <font>fonts\fnt_comment</font>
   </fonts>
@@ -64,6 +67,7 @@
     <object>objects\obj_game</object>
     <object>objects\obj_newspill_OLD</object>
     <object>objects\obj_mouse</object>
+    <object>objects\obj_button</object>
     <object>objects\obj_bottle</object>
     <object>objects\obj_mixer</object>
     <object>objects\obj_glass</object>
@@ -72,7 +76,6 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_liquid</object>
     <object>objects\obj_dial</object>
-    <object>objects\obj_button</object>
     <object>objects\obj_serveButton</object>
     <object>objects\obj_book</object>
     <object>objects\obj_notification</object>
@@ -89,14 +92,15 @@
     <object>objects\obj_credits</object>
     <object>objects\obj_transition</object>
     <object>objects\obj_howto</object>
+    <object>objects\obj_youlose</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_Start</room>
     <room>rooms\room_Test</room>
     <room>rooms\room_Template</room>
+    <room>rooms\room_youlose</room>
     <room>rooms\room_Howto</room>
     <room>rooms\room_Credits</room>
-    <room>rooms\room_youlose</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

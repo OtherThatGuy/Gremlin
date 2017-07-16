@@ -51,7 +51,7 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(vk_f5) room_restart()
+            <string>//if keyboard_check_pressed(vk_f5) room_restart()
 
 lastx=x
 lasty=y
@@ -68,6 +68,9 @@ if mouse_check_button_pressed(mb_left){
         tool = instance_place(x,y,obj_bottle)
         tool.held=true
         toolName="bottle"
+    }
+    else if place_meeting(x,y,obj_button){
+        with instance_place(x,y,obj_button) on=true
     }
     else if place_meeting(x,y,obj_glass){
         tool = instance_place(x,y,obj_glass)
@@ -95,9 +98,6 @@ if mouse_check_button_pressed(mb_left){
     else if place_meeting(x,y,obj_dial){
         tool = instance_place(x,y,obj_dial)
         toolName="dial"
-    }
-    else if place_meeting(x,y,obj_button){
-        with instance_place(x,y,obj_button) on= !on
     }
     else if place_meeting(x,y,obj_book){
         with instance_place(x,y,obj_book){
@@ -181,11 +181,14 @@ if mouse_check_button_released(mb_left){
 }
 
 //DEBUG: notifications
+/*
 if keyboard_check_pressed(vk_space) {
    var noti = instance_create(0,0, obj_notification);
    
    noti.commentType = random(noti.typeAmount);
 }
+
+
 
 </string>
           </argument>

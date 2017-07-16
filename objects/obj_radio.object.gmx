@@ -202,8 +202,13 @@ audio_sound_gain(static,clamp((closeToStation-2)/10,0,1)*volume*on,0)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x-64,y-32,string(station))
-draw_text(x-64,y,string(closeToStation))
+draw_set_font(fnt_radio)
+draw_set_color(c_red)
+draw_text(x+48,y+64,string(station))
+//draw_text(x-64,y,string(closeToStation))
+
+draw_set_font(fnt_default)
+draw_set_color(c_white)
 </string>
           </argument>
         </arguments>

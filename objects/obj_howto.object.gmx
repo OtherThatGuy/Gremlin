@@ -26,13 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>draw_set_halign(fa_middle);
-draw_text(room_width / 2, room_height / 1.2, "Press Z to go back.");
+draw_text(room_width / 2, room_height / 4, "Use the left mouse button to pick up and interact with objects.");
+draw_text(room_width / 2, room_height / 3.5, "Use the right mouse button to pour.");
+draw_text(room_width / 2, room_height / 3, "Use the recipe book to find the needed ingredients");
+draw_text(room_width / 2, room_height / 2.5, "When an order is ready, place it on the order pedistal and ring the bell.");
+draw_text(room_width / 2, room_height / 1.5, "Press Space to go back.");
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="90">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>

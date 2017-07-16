@@ -33,6 +33,9 @@ next=-1
 destroy=false
 
 shaked = false;
+
+audio_sound_pitch(snd_blub,random(1))
+audio_play_sound(snd_blub,irandom(10),false)
 </string>
           </argument>
         </arguments>

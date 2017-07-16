@@ -84,7 +84,7 @@ if (keyboard_check_pressed(vk_up)) {
 }
 
 //menu selection
-if (keyboard_check_pressed(ord("Z"))) {
+if (keyboard_check_pressed(vk_space)) {
    
    switch(curoption) {
     case 0:

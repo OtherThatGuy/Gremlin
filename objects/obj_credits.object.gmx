@@ -33,13 +33,13 @@ draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_hei
 draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("OtherThatGuy - Lead Programmer") * 2, "Osmium - Music")
 draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("OtherThatGuy - Lead Programmer") * 3, "Chari - Object art")
 draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("OtherThatGuy - Lead Programmer") * 4, "PunStar_T - Background art")
-draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("OtherThatGuy - Lead Programmer") * 5, "Press Z to go back to the main menu.")
+draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("OtherThatGuy - Lead Programmer") * 5, "Press Space to go back to the main menu.")
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="90">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>

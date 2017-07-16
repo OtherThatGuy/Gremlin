@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -97,6 +97,7 @@ if (canserver = true) {
   glass.amount[global.red] = 0;
   glass.amount[global.green] = 0;
   glass.amount[global.blue] = 0;
+  glass.ice=0
   glass.shaked = false;
   glass.curColor = c_white;
   global.currentorder = "";
@@ -144,7 +145,7 @@ if (canserver = true) {
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(x, y-150, string(canserver));
+//draw_text(x, y-150, string(canserver));
 </string>
           </argument>
         </arguments>

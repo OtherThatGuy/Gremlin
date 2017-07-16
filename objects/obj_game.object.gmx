@@ -44,6 +44,7 @@ maxorders = array_length_1d(order) - 1;
 global.currentorder = "";
 global.curorderTime = 0;
 global.money = 0;
+global.penalty=0
 global.daystart = false;
 global.dayend = false;
 global.timeleft = 0;
@@ -122,9 +123,9 @@ global.timeleft = clamp(global.timeleft, 0, room_speed*60);
           <argument>
             <kind>1</kind>
             <string>if (global.dayend = false) {
- global.timeleft -= 0.1;
+ global.timeleft -= 1/room_speed;
 if (global.curorderTime &gt;= 0) {
- global.curorderTime -= 0.1;
+ global.curorderTime -= 1/room_speed;
 }
 }
 
@@ -146,11 +147,12 @@ if (global.timeleft &lt;= 0 and room == room_Test) {
  global.dayend = true;
  
  if (global.dayend = true and room == room_Test) {
-  if (room != room_Template) {
-   room_goto(room_Template);
-  }
+ 
+ if (!instance_exists(obj_transition)) {
+  instance_create(0, 0, obj_transition);
  }
  
+}
 }
 
 
@@ -279,10 +281,10 @@ global.dayend = false;
             <kind>1</kind>
             <string>if (room = room_Test) {
 draw_rectangle_colour(x-1088, y, x, y +64, c_black,c_black, c_black, c_black, false);
-draw_text(x, y, string(global.currentorder));
-draw_text(x, y+100, string(global.curorderTime));
-draw_text(x, y+150, string(global.money));
-draw_text(x, y+200, string(global.timeleft));
+draw_set_halign(fa_left)
+draw_text(x-1000, y+32, "Money: " + string(global.money));
+draw_text(x-500, y+32, "Time: " + string(global.timeleft));
+draw_set_halign(fa_middle);
 }
 
 draw_text(x,y, string(global.dayend));

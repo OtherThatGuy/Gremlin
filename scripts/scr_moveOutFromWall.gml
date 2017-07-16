@@ -9,3 +9,6 @@ if place_meeting(x,y,obj_wall){
     }
 
 }
+
+x=clamp(x,0,room_width)
+y=clamp(y,0,room_height)

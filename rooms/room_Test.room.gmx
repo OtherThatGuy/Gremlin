@@ -23,7 +23,7 @@ global.blue=make_colour_rgb(0,0,255)</code>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1008</w>
+    <w>1000</w>
     <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
@@ -34,8 +34,8 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>1274</xoffset>
-    <yoffset>724</yoffset>
+    <xoffset>-33</xoffset>
+    <yoffset>-26</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="background0" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -81,8 +81,8 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <instance objName="obj_wall" x="1344" y="848" name="inst_2F297171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1408" y="848" name="inst_8884ECB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1472" y="848" name="inst_A7C088CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1808" y="656" name="inst_E93A114F" locked="0" code="color=global.red&#xA;&#xA;image_index = 1;&#xA;&#xA;&#xA;if (global.day &lt;= 1) {&#xA; //instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1552" y="656" name="inst_97032115" locked="0" code="color=global.green&#xA;image_index = 3;&#xA;&#xA;&#xA;if (global.day &lt;= 2) {&#xA; //instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1808" y="656" name="inst_E93A114F" locked="0" code="color=global.red&#xA;&#xA;image_index = 1;&#xA;&#xA;&#xA;if (global.day &lt;= 1) {&#xA; instance_destroy();&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1552" y="656" name="inst_97032115" locked="0" code="color=global.green&#xA;image_index = 3;&#xA;&#xA;&#xA;if (global.day &lt;= 2) {&#xA; instance_destroy();&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bottle" x="1680" y="656" name="inst_F1E36844" locked="0" code="color=global.blue&#xA;&#xA;image_index = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_glass" x="944" y="784" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_book" x="1744" y="1184" name="inst_1CCC1122" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

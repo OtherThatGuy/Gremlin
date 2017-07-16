@@ -60,9 +60,14 @@ image_index=irandom(3)
  alphatarget = 0;
 }
 
-curalpha = lerp(image_alpha, alphatarget, .08);
+curalpha = lerp(image_alpha, alphatarget, .2);
 
 image_alpha = curalpha;
+
+if (curalpha = 0) {
+ image_index = irandom(3);
+}
+
 </string>
           </argument>
         </arguments>
