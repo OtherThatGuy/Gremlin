@@ -3,8 +3,8 @@
   <spriteName>spr_mouse</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>0</persistent>
+  <depth>-105</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bottle=0
+            <string>tool=-1
+toolName=""
+holding = false;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -48,29 +51,141 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lastx=x
+            <string>if keyboard_check_pressed(vk_f5) room_restart()
+
+lastx=x
 lasty=y
 
 x=mean(mouse_x,x)
 y=mean(mouse_y,y)
 
-if instance_exists(obj_bottle){
-    bottle=instance_nearest(x,y,obj_bottle)
-    if mouse_check_button(mb_left){
-        if place_meeting(x,y,bottle) bottle.held=true
-    }
-    else bottle.held=false
-    
-    if bottle.held{
-        bottle.x=x
-        bottle.y=y
-        bottle.pour=mouse_check_button(mb_right)
-    }
-    else bottle.pour=false
+if (mouse_x&gt;0&amp;&amp;mouse_x&lt;1920)&amp;&amp;(mouse_y&gt;0&amp;&amp;mouse_y&lt;1080) window_set_cursor(cr_none)
+else window_set_cursor(cr_default)
 
+if mouse_check_button_pressed(mb_left){
+    image_index=1
+    if place_meeting(x,y,obj_bottle){
+        tool = instance_place(x,y,obj_bottle)
+        tool.held=true
+        toolName="bottle"
+    }
+    else if place_meeting(x,y,obj_glass){
+        tool = instance_place(x,y,obj_glass)
+        tool.held=true
+        toolName="glass"
+    } else if place_meeting(x,y,obj_mixer){
+        tool = instance_place(x,y,obj_mixer)
+        tool.held=true
+        toolName="mixer"
+    } else if place_meeting(x,y,obj_ingredient){
+        tool = instance_place(x,y,obj_ingredient)
+        tool.held=true
+        toolName="ingredient"
+    }
+    else if place_meeting(x,y,obj_rag){
+        tool = instance_place(x,y,obj_rag)
+        tool.held=true
+        toolName="rag"
+    }
+    else if place_meeting(x,y,obj_iceBucket){
+        tool = instance_create(x,y,obj_ice)
+        tool.held=true
+        toolName="ingredient"
+    }
+    else if place_meeting(x,y,obj_dial){
+        tool = instance_place(x,y,obj_dial)
+        toolName="dial"
+    }
+    else if place_meeting(x,y,obj_button){
+        with instance_place(x,y,obj_button) on= !on
+    }
+    else if place_meeting(x,y,obj_book){
+        with instance_place(x,y,obj_book){
+            if open{
+                if other.x&lt;x page-=2
+                else page+=2
+            }
+            open=true
+        }
+   }
 }
-else bottle=-1
 
+if mouse_check_button_pressed(mb_right)&amp;&amp;tool=-1{
+    if place_meeting(x,y,obj_book){
+        with instance_place(x,y,obj_book){
+            open=false
+        }
+    }
+}
+
+if instance_exists(tool){
+    if toolName="bottle"{
+        image_index = 1;
+        tool.x=x
+        tool.y=y
+        tool.pour=mouse_check_button(mb_right)
+    
+        if mouse_check_button_released(mb_left){
+            tool.held=false
+            tool.pour = false
+        }
+    }
+    else if toolName="ingredient"{
+        image_index = 1;
+        tool.x=x
+        tool.y=y
+        if mouse_check_button_released(mb_left) tool.held=false
+    }
+    else if toolName="rag"{
+        tool.x=x
+        tool.y=y
+        if mouse_check_button_released(mb_left) tool.held=false
+    }
+    else if toolName = "dial"{
+        tool.image_angle-= angle_difference(point_direction(tool.x,tool.y,lastx,lasty),point_direction(tool.x,tool.y,x,y));
+    } else if toolName="glass" {
+        image_index = 1;
+        tool.x=x
+        tool.y=y
+        
+        if mouse_check_button_released(mb_left){
+            tool.held=false
+        }
+    } else if toolName="mixer"{
+       if tool.shaked = true {
+        image_index = 2
+       } else {
+        image_index = 1;
+       }
+        tool.x=x
+        tool.y=y
+        tool.pour=mouse_check_button(mb_right)
+    
+        if mouse_check_button_released(mb_left){
+            tool.held=false
+            tool.pour = false
+        }
+        
+        if keyboard_check_pressed(ord("R")){
+            tool.full = 0;
+            
+        }
+    }
+}
+
+
+if mouse_check_button_released(mb_left){
+    tool=-1;
+    toolName="";
+    image_index = 0;
+}
+
+//DEBUG: notifications
+if keyboard_check_pressed(vk_space) {
+   var noti = instance_create(0,0, obj_notification);
+   
+   noti.commentType = random(noti.typeAmount);
+}
 
 </string>
           </argument>

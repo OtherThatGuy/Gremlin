@@ -8,6 +8,174 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//a rewrite, because why not?
+hasHorPuddle = false;
+hasVerPuddle = false;
+Hor = 0;
+Ver = 0;
+SpillAmount = 0;
+SpillColor=c_gray
+curSpillAmount = 0;
+curPuddleHeight = 0;
+multiplied = false;
+currenthorsprite = spr_horPuddle;
+currentversprite = spr_verPuddle;
+horY = 0;
+verX = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(hasHorPuddle = true) {
+ var leftwall = instance_place(x-sprite_width,y, obj_wall);
+ var rightwall = instance_place(x+sprite_width,y, obj_wall);
+ 
+ curPuddleHeight = lerp(curPuddleHeight, 1, .03);
+ curSpillAmount = lerp(curSpillAmount, SpillAmount, .05);
+ 
+ 
+ if (Hor &gt;= 0) {
+  currenthorsprite = spr_horPuddle;
+ } else if (Hor &lt;= 0) {
+  currenthorsprite = spr_horpuddle2;
+ }
+ 
+ if (currenthorsprite = spr_horpuddle2) {
+  horY = y + sprite_get_height(spr_horpuddle2);
+ } else {
+  horY = y;
+ }
+ 
+ 
+if (multiplied = false) {
+ if (leftwall != noone) {
+  leftwall.hasHorPuddle = true;
+  leftwall.multiplied = true;
+  leftwall.Hor = self.Hor;
+  
+ }
+ 
+ if (rightwall != noone) {
+  rightwall.hasHorPuddle = true;
+  rightwall.multiplied = true;
+  rightwall.Hor = self.Hor;
+ }
+}
+
+
+if (leftwall != noone) {
+  if (leftwall.SpillAmount &lt;= self.SpillAmount / 2) {
+   leftwall.SpillAmount += 0.01;
+   leftwall.SpillColor=merge_colour(leftwall.SpillColor,SpillColor,0.5)
+  }
+  hasVerPuddle=false
+}
+
+if (rightwall != noone) {
+  if (rightwall.SpillAmount &lt;= self.SpillAmount / 2) {
+   rightwall.SpillAmount += 0.01;
+   rightwall.SpillColor=merge_colour(rightwall.SpillColor,SpillColor,0.5)
+   
+  }
+  hasVerPuddle=false
+}
+
+}
+
+if(hasVerPuddle = true) {
+ var upwall = instance_place(x,y-sprite_width, obj_wall);
+ var downwall = instance_place(x,y+sprite_width, obj_wall);
+ 
+ curPuddleHeight = lerp(curPuddleHeight, 1, .03);
+ curSpillAmount = lerp(curSpillAmount, SpillAmount, .05);
+ 
+ 
+ if (Ver &gt;= 0) {
+  currentversprite = spr_verPuddle;
+ } else if (Ver &lt;= 0) {
+  currentversprite = spr_verPuddle2;
+ }
+ 
+ if (currentversprite = spr_verPuddle2) {
+  verX = x + sprite_height;
+ } else {
+  verX = x;
+ }
+ 
+ 
+if (multiplied = false) {
+ if (upwall != noone) {
+  upwall.hasVerPuddle = true;
+  upwall.multiplied = true;
+  upwall.Ver = self.Ver;
+ }
+ 
+ if (downwall != noone) {
+  downwall.hasVerPuddle = true;
+  downwall.multiplied = true;
+  downwall.Ver = self.Ver;
+ }
+}
+
+
+if (upwall != noone) {
+  if (upwall.SpillAmount &lt;= self.SpillAmount / 2) {
+   upwall.SpillAmount += 0.01;
+   upwall.SpillColor=merge_colour(upwall.SpillColor,SpillColor,0.5)
+   hasHorPuddle=false
+  }
+}
+
+if (downwall != noone) {
+  if (downwall.SpillAmount &lt;= self.SpillAmount / 2) {
+   downwall.SpillAmount += 0.01;
+   downwall.SpillColor=merge_colour(downwall.SpillColor,SpillColor,0.5)
+  }
+}
+
+}
+
+SpillAmount=clamp(SpillAmount,0,1)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="3">
       <action>
         <libid>1</libid>
@@ -22,6 +190,37 @@
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (hasHorPuddle = true) {
+   draw_sprite_ext(currenthorsprite, 0, x, horY, 1, curPuddleHeight, 0, SpillColor, curSpillAmount/2);
+}
+
+if (hasVerPuddle = true) {
+   draw_sprite_ext(currentversprite, 0, verX, y, curPuddleHeight, 1, 0, SpillColor, curSpillAmount/2);
+}
+
+//draw_text(x,y,string(SpillAmount))
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

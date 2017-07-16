@@ -4,28 +4,99 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_static</sound>
+    <sound>sound\snd_song1</sound>
+    <sound>sound\snd_song2</sound>
+    <sound>sound\snd_song3</sound>
+    <sound>sound\snd_song4</sound>
+    <sound>sound\snd_song5</sound>
+    <sound>sound\snd_song6</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_BottlePlaceHolder</sprite>
+    <sprite>sprites\spr_mixerPlaceHolder</sprite>
+    <sprite>sprites\spr_glassPlaceHolder</sprite>
     <sprite>sprites\spr_mouse</sprite>
+    <sprite>sprites\spr_liquid</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_verPuddle</sprite>
+    <sprite>sprites\spr_verPuddle2</sprite>
+    <sprite>sprites\spr_horPuddle</sprite>
+    <sprite>sprites\spr_horpuddle2</sprite>
+    <sprite>sprites\spr_SpillPlaceHolder</sprite>
+    <sprite>sprites\spr_radioDial</sprite>
+    <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_Book</sprite>
+    <sprite>sprites\spr_ingredient</sprite>
+    <sprite>sprites\spr_commentMask</sprite>
+    <sprite>sprites\spr_notComment</sprite>
+    <sprite>sprites\spr_notFaces</sprite>
+    <sprite>sprites\spr_bookIcons</sprite>
+    <sprite>sprites\spr_serve</sprite>
+    <sprite>sprites\spr_ragUp</sprite>
+    <sprite>sprites\spr_ragDn</sprite>
+    <sprite>sprites\spr_radio</sprite>
+    <sprite>sprites\spr_costumer</sprite>
+    <sprite>sprites\spr_iceBucket</sprite>
+    <sprite>sprites\spr_vignette</sprite>
+    <sprite>sprites\spr_bell</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\background1</background>
+    <background>background\background2</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_collision.gml</script>
+    <script>scripts\scr_moveOutFromWall.gml</script>
+    <script>scripts\scr_getOrderName.gml</script>
+    <script>scripts\scr_Serve.gml</script>
+    <script>scripts\scr_getDrinkName.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
+    <font>fonts\fnt_book</font>
+    <font>fonts\fnt_comment</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_game</object>
+    <object>objects\obj_newspill_OLD</object>
     <object>objects\obj_mouse</object>
     <object>objects\obj_bottle</object>
+    <object>objects\obj_mixer</object>
+    <object>objects\obj_glass</object>
+    <object>objects\obj_ingredient</object>
+    <object>objects\obj_ice</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_liquid</object>
+    <object>objects\obj_dial</object>
+    <object>objects\obj_button</object>
+    <object>objects\obj_serveButton</object>
+    <object>objects\obj_book</object>
+    <object>objects\obj_notification</object>
+    <object>objects\obj_serve</object>
+    <object>objects\obj_rag</object>
+    <object>objects\obj_stationDial</object>
+    <object>objects\obj_volumeDial</object>
+    <object>objects\obj_radioButton</object>
+    <object>objects\obj_radio</object>
+    <object>objects\obj_costumer</object>
+    <object>objects\obj_dayroom</object>
+    <object>objects\obj_iceBucket</object>
+    <object>objects\obj_menu</object>
+    <object>objects\obj_credits</object>
+    <object>objects\obj_transition</object>
+    <object>objects\obj_howto</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_Start</room>
     <room>rooms\room_Test</room>
     <room>rooms\room_Template</room>
+    <room>rooms\room_Howto</room>
+    <room>rooms\room_Credits</room>
+    <room>rooms\room_youlose</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

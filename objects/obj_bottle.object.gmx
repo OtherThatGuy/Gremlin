@@ -28,12 +28,19 @@
             <string>full=100
 held=false
 pour=false
+nextdrop=2
 lastx=x
 lasty=y
 xvel=0
 yvel=0
 angleDiff=0
 lastAngle=0
+color=c_white
+
+image_speed = 0;
+last=-1
+
+
 </string>
           </argument>
         </arguments>
@@ -56,7 +63,9 @@ lastAngle=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//image_angle=(image_angle+360)mod 360
+            <string>///Controls swaying physics
+//if abs(image_angle)&gt;360 image_angle=(abs(image_angle) mod 360)
+
 if held{
     angleDiff=mean(angle_difference(image_angle,lastAngle),angleDiff)
     lastAngle=image_angle
@@ -67,7 +76,8 @@ if held{
     image_angle-=xvel
 }
 else{
-    image_angle-=angle_difference(image_angle,0)/max(abs(angleDiff),1)
+    image_angle-=angle_difference(image_angle,round(image_angle/90)*90)/max(abs(angleDiff),1)
+    if place_meeting(x,y+1,obj_wall) image_angle-=angle_difference(image_angle,round(image_angle/90)*90)/max(abs(angleDiff)/2,1)
     image_angle+=angleDiff
     angleDiff/=1.03
     yvel+=1.5
@@ -78,6 +88,9 @@ else{
 
 lastx=x
 lasty=y
+
+if pour image_angle=clamp(image_angle,-180,180)
+else if image_angle!=0 image_angle= image_angle mod (sign(image_angle)*360)
 </string>
           </argument>
         </arguments>
@@ -98,16 +111,44 @@ lasty=y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y,obj_wall){
-    if !place_meeting(x,y-sprite_height/2,obj_wall) y--
-    else if !place_meeting(x,y+sprite_height/2,obj_wall) y++
-    else if !place_meeting(x-sprite_width/2,y,obj_wall) x--
-    else if !place_meeting(x+sprite_width/2,y,obj_wall) x++
-    else{
-        x+=sign(x-(room_width/2))
-        y+=sign(y-(room_height/2))
-    }
+            <string>///Gets bottle unstuck from walls
+scr_moveOutFromWall()
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pouring
 
+if abs(image_angle)&gt;=90 nextdrop-=1//+abs(xvel)+abs(yvel)
+else last=-1
+
+if nextdrop&lt;=0{
+    nextdrop=2
+    with instance_create(x+lengthdir_x(sprite_yoffset*0.75,image_angle+90),y+lengthdir_y(sprite_yoffset*0.75,image_angle+90),obj_liquid){
+        color=other.color
+        type[other.color]=100
+        size=clamp(sqr(abs(angle_difference(other.image_angle,0))/36),4,25)
+        xvel=other.xvel/8+lengthdir_x(8,other.image_angle+90)+random_range(-1,1)
+        yvel=other.yvel/8+lengthdir_y(8,other.image_angle+90)+random_range(-1,1)
+        if instance_exists(other.last)other.last.next=id
+        other.last=id
+    }
 }
 </string>
           </argument>
@@ -128,6 +169,29 @@ lasty=y
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
