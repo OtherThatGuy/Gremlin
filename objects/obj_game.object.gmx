@@ -30,7 +30,7 @@
 order[0] = "Bloumousse";
 order[1] = "Ice Spike";
 order[2] = "Goblin Blue";
-order[3] = "Red Baie";
+order[3] = "Rouge Baie";
 order[4] = "Fire Bolt";
 order[5] = "Mana Potion";
 order[6] = "GreenScale";
@@ -212,7 +212,7 @@ if (global.timeleft &lt;= 0 and room == room_Test) {
  global.curorderTime = 0;
  global.daystart = true;
  global.dayend = false;
- global.timeleft = room_speed*5;
+ global.timeleft = room_speed*(2+global.day);
  alarm[0] = room_speed*0.2;
 }
 

@@ -50,6 +50,7 @@ typeTotal=0
 shakeamount = 0;
 
 shaked = false;
+image_speed=0
 </string>
           </argument>
         </arguments>
