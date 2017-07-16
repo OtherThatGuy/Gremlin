@@ -3,7 +3,7 @@
   <spriteName>spr_mouse</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-105</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -59,6 +59,8 @@ lasty=y
 x=mean(mouse_x,x)
 y=mean(mouse_y,y)
 
+if (mouse_x&gt;0&amp;&amp;mouse_x&lt;1920)&amp;&amp;(mouse_y&gt;0&amp;&amp;mouse_y&lt;1080) window_set_cursor(cr_none)
+else window_set_cursor(cr_default)
 
 if mouse_check_button_pressed(mb_left){
     image_index=1

@@ -5,10 +5,10 @@ switch(global.day) {
   orders = 2;
   break;
   case 2:
-  orders = 4;
+  orders = 5;
   break;
   case 3:
-  orders = 6;
+  orders = 10;
   break;
 }
 

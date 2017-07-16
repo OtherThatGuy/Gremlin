@@ -94,8 +94,7 @@ scr_moveOutFromWall()
           <argument>
             <kind>1</kind>
             <string>if (point_in_rectangle(x,y, other.x - other.sprite_width / 2, other.y - other.sprite_height / 1.85, other.x + other.sprite_width / 2, other.y - other.sprite_height / 3)) &amp;&amp;!held &amp;&amp;yvel&gt;0 {
-    other.ingredientCount++
-    other.ingredient[other.ingredientCount]=name
+    other.ice++
     instance_destroy()
 }
 </string>

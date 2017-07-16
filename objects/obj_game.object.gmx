@@ -27,14 +27,17 @@
             <kind>1</kind>
             <string>//initialize global variables
 
-order[0] = "Ice Spike";
-order[1] = "Goblin Blue";
-order[2] = "Fire Bolt";
-order[3] = "Mana Potion";
-order[4] = "Dragon Breath";
-order[5] = "Dungeon Brew";
-order[6] = "King's Field";
-order[7] = "'Crangus'";
+order[0] = "Bloumousse";
+order[1] = "Ice Spike";
+order[2] = "Goblin Blue";
+order[3] = "Red Baie";
+order[4] = "Fire Bolt";
+order[5] = "Mana Potion";
+order[6] = "GreenScale";
+order[7] = "Dragon Breath";
+order[8] = "Dungeon Brew";
+order[9] = "King's Field";
+order[10] = "'Crangus'";
 
 maxorders = array_length_1d(order) - 1;
  

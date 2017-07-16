@@ -35,7 +35,7 @@ xvel=0
 yvel=0
 angleDiff=0
 lastAngle=0
-color=c_white
+color=c_black
 
 last=-1
 
@@ -73,6 +73,7 @@ shaked = false;
           <argument>
             <kind>1</kind>
             <string>//just clamping
+full=amount[global.red]+amount[global.green]+amount[global.blue]
 full= clamp(full, 0, 100);
 shakeamount = clamp(shakeamount, 0, 20);
 
@@ -179,10 +180,12 @@ else last=-1
 
 if nextdrop&lt;=0 and full &gt; 0{
     nextdrop=2
-    full -= 0.1;
+    amount[global.red]=floor(amount[global.red]-amount[global.red]*0.01)
+    amount[global.green]=floor(amount[global.green]-amount[global.green]*0.01)
+    amount[global.blue]=floor(amount[global.blue]-amount[global.blue]*0.01)
     with instance_create(x+lengthdir_x(sprite_yoffset,image_angle+90),y+lengthdir_y(sprite_yoffset,image_angle+90),obj_liquid){
         shaked = other.shaked;
-        color=other.color;
+        color=make_color_rgb(min(255,other.amount[global.red]*10),min(255,other.amount[global.green]*10),min(255,other.amount[global.blue]*10))
         
         //the original code for this was basically to decrease the porcentage of the others, and the liquid should have the sign of the other / 10
         //but, this is practically impossible with the randomness of the liquids.

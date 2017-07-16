@@ -93,7 +93,10 @@ if (glass = -1) {
 if (canserver = true) {
  //make an actual point and click button for serving
  if (obj_serveButton.on and global.currentorder != "") {
-  glass.full = 0;
+  scr_Serve(scr_getDrinkName(glass.amount[global.red],glass.amount[global.green],glass.amount[global.blue],glass.ice,glass.shaked,glass.full),glass.full)
+  glass.amount[global.red] = 0;
+  glass.amount[global.green] = 0;
+  glass.amount[global.blue] = 0;
   glass.shaked = false;
   glass.curColor = c_white;
   global.currentorder = "";

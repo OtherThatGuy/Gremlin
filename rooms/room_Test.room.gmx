@@ -34,8 +34,8 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>185</xoffset>
-    <yoffset>1693</yoffset>
+    <xoffset>1274</xoffset>
+    <yoffset>724</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="background0" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -81,15 +81,14 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <instance objName="obj_wall" x="1344" y="848" name="inst_2F297171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1408" y="848" name="inst_8884ECB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1472" y="848" name="inst_A7C088CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1808" y="640" name="inst_E93A114F" locked="0" code="color=global.red&#xA;&#xA;image_index = 1;&#xA;&#xA;&#xA;if (global.day &lt;= 1) {&#xA; //instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1552" y="640" name="inst_97032115" locked="0" code="color=global.green&#xA;image_index = 3;&#xA;&#xA;&#xA;if (global.day &lt;= 2) {&#xA; //instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bottle" x="1680" y="640" name="inst_F1E36844" locked="0" code="color=global.blue&#xA;&#xA;image_index = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_glass" x="944" y="768" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1808" y="656" name="inst_E93A114F" locked="0" code="color=global.red&#xA;&#xA;image_index = 1;&#xA;&#xA;&#xA;if (global.day &lt;= 1) {&#xA; //instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1552" y="656" name="inst_97032115" locked="0" code="color=global.green&#xA;image_index = 3;&#xA;&#xA;&#xA;if (global.day &lt;= 2) {&#xA; //instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bottle" x="1680" y="656" name="inst_F1E36844" locked="0" code="color=global.blue&#xA;&#xA;image_index = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_glass" x="944" y="784" name="inst_BF771BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_book" x="1744" y="1184" name="inst_1CCC1122" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ingredient" x="1088" y="704" name="inst_941D6B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mixer" x="784" y="640" name="inst_B2CC3874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_serve" x="1232" y="784" name="inst_A41A97C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rag" x="576" y="688" name="inst_B5ACAE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_serve" x="1184" y="816" name="inst_A41A97C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rag" x="576" y="768" name="inst_B5ACAE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_radio" x="176" y="976" name="inst_33860F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stationDial" x="208" y="976" name="inst_767AD5DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_radioButton" x="272" y="928" name="inst_A26914AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -105,8 +104,8 @@ global.blue=make_colour_rgb(0,0,255)</code>
     <instance objName="obj_wall" x="128" y="848" name="inst_01DDCBF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="848" name="inst_D34F567A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="848" name="inst_BFA4F3C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_serveButton" x="1376" y="848" name="inst_D33D0723" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iceBucket" x="448" y="1040" name="inst_1E67D410" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_serveButton" x="1376" y="832" name="inst_D33D0723" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iceBucket" x="448" y="1024" name="inst_1E67D410" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
