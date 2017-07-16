@@ -210,7 +210,7 @@ if (global.timeleft &lt;= 0 and room == room_Test) {
  global.curorderTime = 0;
  global.daystart = true;
  global.dayend = false;
- global.timeleft = room_speed*5;
+ global.timeleft = 180*60;
  alarm[0] = room_speed*0.2;
 }
 
