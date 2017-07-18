@@ -210,8 +210,8 @@ else y=mean(y,1152)
             <string>draw_self()
 draw_set_color(c_black)
 draw_set_font(fnt_book)
-draw_text(x-167,y+top,string(page))
-draw_text(x+25,y+top,string(page+1))
+draw_text(x-167,y+top-8,string(page))
+draw_text(x+25,y+top-8,string(page+1))
 
 
 draw_text(x-95,y-top,recipe[page,0])

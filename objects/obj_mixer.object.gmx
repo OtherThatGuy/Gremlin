@@ -230,6 +230,11 @@ if (held) {
 if shakeamount &gt;= 20 {
   shaked = true;
 }
+
+if (full &lt;= 0) {
+ shaked = false;
+ shakeamount = 0;
+}
 </string>
           </argument>
         </arguments>

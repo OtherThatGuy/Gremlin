@@ -132,7 +132,7 @@ if (global.money &gt;= 0) {
  break;
  case 3:
  if (global.money &gt;= 0) {
- room_goto(room_Start)
+ room_goto(room_Credits)
  } else if (global.money &lt; 0) {
   room_goto(room_youlose);
  }
