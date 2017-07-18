@@ -15,7 +15,6 @@ switch(global.day) {
 var i = round(random_range(0, orders));
 
  global.currentorder = order[i];
- global.curorderTime = room_speed*3.5;
 
 
 var notification = instance_create(0, 0, obj_notification);
