@@ -102,8 +102,8 @@ if mouse_check_button_pressed(mb_left){
     else if place_meeting(x,y,obj_book){
         with instance_place(x,y,obj_book){
             if open{
-                if other.x&lt;x page-=2
-                else page+=2
+                if other.x&lt;x page-=1
+                else page+=1
             }
             open=true
         }
